@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  before_action :authorized_staff
+
   def encode_token(payload)
     JWT.encode(payload, "rebirth")
   end
@@ -18,24 +20,6 @@ class ApplicationController < ActionController::API
         nil
       end
     end
-  end
-
-  # method to find the current admin
-  def current_admin
-    if decoded_token
-      admin_id = decoded_token[0]["admin_id"]
-      @aid = Admin.find_by(id: admin_id)
-    end
-  end
-
-  # method to find the if admin is logged in
-  def logged_in?
-    !!current_admin
-  end
-
-  # method to authorize logged in admin
-  def authorized_admin
-    render json: { message: "Please login" }, status: :unauthorized unless logged_in?
   end
 
   ## Now Its Staff Time

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :bags
-  resources :admins
   resources :categories
   resources :staffs
   resources :shops

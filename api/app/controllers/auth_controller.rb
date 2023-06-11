@@ -1,12 +1,12 @@
 class AuthController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized_staff, only: [:create]
 
-    # method to login admin
+    # method to login staff
     def create
-      @admin = Admin.find_by(name: admin_login_params[:name])
-      if @admin&.authenticate(admin_login_params[:password])
-        token = encode_token({ admin_id: @admin.id })
-        render json: { admin: AdminSerializer.new(@admin), jwt: token }, status: :accepted
+      @staff = Staff.find_by(name: staff_login_params[:name])
+      if @staff&.authenticate(staff_login_params[:password])
+        token = encode_token({ staff_id: @staff.id })
+        render json: { staff: StaffSerializer.new(@staff), jwt: token }, status: :accepted
       else
         render json: { message: "Invalid username or password" }, status: :unauthorized
       end
@@ -14,7 +14,7 @@ class AuthController < ApplicationController
   
     private
   
-    def admin_login_params
+    def staff_login_params
       params.permit(:name, :password)
     end
   end
