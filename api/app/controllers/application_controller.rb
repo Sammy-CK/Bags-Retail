@@ -28,7 +28,7 @@ class ApplicationController < ActionController::API
   def current_staff
     if decoded_token
       staff_id = decoded_token[0]["staff_id"]
-      @sid = staff_id.find_by(id: staff_id)
+      @sid = Staff.find_by(id: staff_id)
     end
   end
 

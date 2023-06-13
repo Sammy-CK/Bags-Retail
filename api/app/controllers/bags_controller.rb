@@ -16,9 +16,9 @@ class BagsController < ApplicationController
   # POST /bags
   def create
     @bag = Bag.new(bag_params)
-
+    puts @bag
     if @bag.save
-      render json: @bag, status: :created, location: @bag
+      render json: @bag, status: :created
     else
       render json: @bag.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class BagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bag_params
-      params.require(:bag).permit(:name, :sold, :stored, :shop_id, :category_id, :image, :price, :sold_at)
+      params.permit(:name, :sold, :stored, :shop_id, :category_id, :image, :price, :sold_at)
     end
 end
