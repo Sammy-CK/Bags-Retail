@@ -13,12 +13,13 @@ function LogInForm(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(logInDetails)
         fetch('https://bags-o7py.onrender.com/login', {
             method: "POST",
             headers: {
 				'Content-Type': 'application/json',
 			},
-			body: logInDetails,
+			body: JSON.stringify(logInDetails),
         }).then(resp => {
             if (resp.ok){
                 return resp.json()
@@ -33,7 +34,7 @@ return(
     <form onSubmit={handleSubmit} >
         <div>
             <h3>USERNAME</h3>
-            <input type='text' name="username" onChange={handleChange} value={logInDetails.username}/>
+            <input type='text' name="name" onChange={handleChange} value={logInDetails.name}/>
         </div>
         <div>
             <h3>PASSWORD</h3>
