@@ -32,7 +32,7 @@ function StoreIndividualCategoryPage(){
 
     let shownCategoryBags = categoryBags.map(categoryBag => {
         return(
-        <li><p>name: {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> <button onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
+        <li key={categoryBag.id}><p>name: {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> <button onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
         )
     })
     

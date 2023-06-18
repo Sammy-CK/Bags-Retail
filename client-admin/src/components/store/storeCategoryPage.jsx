@@ -64,6 +64,7 @@ function StoreCategoryPage(){
         <div>
         <h2>STORE</h2>
         <p>TOTAL: {storedBags.length}</p>
+        <button onClick={() => takeCategory('/store/new')}>ADD BAG</button>
         <h3>CATEGORIES</h3>
         <ul>
             {categoryBox}
