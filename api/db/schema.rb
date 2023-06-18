@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_091904) do
     t.text "image_data"
     t.integer "price"
     t.date "sold_at"
+    t.integer "secret_shop_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

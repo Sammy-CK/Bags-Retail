@@ -1656,3 +1656,104 @@ Migrating to CreateBags (20230610091904)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mBag Update (0.8ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"303ecc0a9990f8494bcfbc27f61f6438.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag4fannypack.jpg\",\"size\":87128,\"mime_type\":\"image/jpeg\",\"width\":484,\"height\":1024}}"], ["updated_at", "2023-06-18 20:25:38.137760"], ["id", 4]]
   [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShops (20230607075731)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "shops" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230607075731"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStaffs (20230607081426)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password_digest" varchar, "phone_number" integer, "role" varchar, "shop_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230607081426"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20230607081811)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230607081811"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBags (20230610091904)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "bags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "sold" boolean, "stored" boolean, "shop_id" integer, "category_id" integer, "image_data" text, "price" integer, "sold_at" date, "secret_shop_key" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230610091904"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-18 20:46:51.892962"], ["updated_at", "2023-06-18 20:46:51.892962"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Create (0.6ms)[0m  [1m[32mINSERT INTO "shops" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shop 1"], ["created_at", "2023-06-18 20:47:06.934948"], ["updated_at", "2023-06-18 20:47:06.934948"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Create (0.6ms)[0m  [1m[32mINSERT INTO "shops" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shop 2"], ["created_at", "2023-06-18 20:47:06.945552"], ["updated_at", "2023-06-18 20:47:06.945552"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Create (0.5ms)[0m  [1m[32mINSERT INTO "shops" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shop 3"], ["created_at", "2023-06-18 20:47:06.956769"], ["updated_at", "2023-06-18 20:47:06.956769"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Create (0.5ms)[0m  [1m[32mINSERT INTO "shops" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shop 4"], ["created_at", "2023-06-18 20:47:06.966765"], ["updated_at", "2023-06-18 20:47:06.966765"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Create (0.5ms)[0m  [1m[32mINSERT INTO "staffs" ("name", "password_digest", "phone_number", "role", "shop_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "test"], ["password_digest", "[FILTERED]"], ["phone_number", 117440512], ["role", "admin"], ["shop_id", 1], ["created_at", "2023-06-18 20:47:07.315803"], ["updated_at", "2023-06-18 20:47:07.315803"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Create (0.4ms)[0m  [1m[32mINSERT INTO "staffs" ("name", "password_digest", "phone_number", "role", "shop_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "test1"], ["password_digest", "[FILTERED]"], ["phone_number", 119537664], ["role", "attendant"], ["shop_id", 2], ["created_at", "2023-06-18 20:47:07.595688"], ["updated_at", "2023-06-18 20:47:07.595688"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStaff Create (0.5ms)[0m  [1m[32mINSERT INTO "staffs" ("name", "password_digest", "phone_number", "role", "shop_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "test2"], ["password_digest", "[FILTERED]"], ["phone_number", 121634816], ["role", "attendant"], ["shop_id", 3], ["created_at", "2023-06-18 20:47:07.883261"], ["updated_at", "2023-06-18 20:47:07.883261"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStaff Create (0.5ms)[0m  [1m[32mINSERT INTO "staffs" ("name", "password_digest", "phone_number", "role", "shop_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "test3"], ["password_digest", "[FILTERED]"], ["phone_number", 123731968], ["role", "attendant"], ["shop_id", 4], ["created_at", "2023-06-18 20:47:08.181016"], ["updated_at", "2023-06-18 20:47:08.181016"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "travel"], ["created_at", "2023-06-18 20:47:08.199400"], ["updated_at", "2023-06-18 20:47:08.199400"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "backpack"], ["created_at", "2023-06-18 20:47:08.210253"], ["updated_at", "2023-06-18 20:47:08.210253"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "sling"], ["created_at", "2023-06-18 20:47:08.219164"], ["updated_at", "2023-06-18 20:47:08.219164"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fannypack"], ["created_at", "2023-06-18 20:47:08.228870"], ["updated_at", "2023-06-18 20:47:08.228870"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBag Create (0.5ms)[0m  [1m[32mINSERT INTO "bags" ("name", "sold", "stored", "shop_id", "category_id", "image_data", "price", "sold_at", "secret_shop_key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gucci"], ["sold", 0], ["stored", 1], ["shop_id", 1], ["category_id", 1], ["image_data", "{\"id\":\"5e5649c30bee835e29b470850669ba24.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"bag1travel.jpg\",\"size\":230930,\"mime_type\":\"image/jpeg\",\"width\":983,\"height\":1228}}"], ["price", 0], ["sold_at", nil], ["secret_shop_key", "[FILTERED]"], ["created_at", "2023-06-18 20:47:14.242803"], ["updated_at", "2023-06-18 20:47:14.242803"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBag Update (0.5ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"06dcaf0da03f44f33941cbd1f78d549f.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag1travel.jpg\",\"size\":230930,\"mime_type\":\"image/jpeg\",\"width\":983,\"height\":1228}}"], ["updated_at", "2023-06-18 20:47:15.659126"], ["id", 1]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBag Create (0.9ms)[0m  [1m[32mINSERT INTO "bags" ("name", "sold", "stored", "shop_id", "category_id", "image_data", "price", "sold_at", "secret_shop_key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coco"], ["sold", 0], ["stored", 1], ["shop_id", 1], ["category_id", 2], ["image_data", "{\"id\":\"459b361fcdb62a51c75d5e89e137eb01.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"bag2backpack.jpg\",\"size\":144048,\"mime_type\":\"image/jpeg\",\"width\":1283,\"height\":1557}}"], ["price", 0], ["sold_at", nil], ["secret_shop_key", "[FILTERED]"], ["created_at", "2023-06-18 20:47:17.651025"], ["updated_at", "2023-06-18 20:47:17.651025"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBag Update (0.8ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"3fefbb6a311f381f3c89399e528763b4.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag2backpack.jpg\",\"size\":144048,\"mime_type\":\"image/jpeg\",\"width\":1283,\"height\":1557}}"], ["updated_at", "2023-06-18 20:47:19.232856"], ["id", 2]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBag Create (0.8ms)[0m  [1m[32mINSERT INTO "bags" ("name", "sold", "stored", "shop_id", "category_id", "image_data", "price", "sold_at", "secret_shop_key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Channel"], ["sold", 0], ["stored", 1], ["shop_id", 1], ["category_id", 3], ["image_data", "{\"id\":\"2e32a454b1f3e4943f0573031dc50dc9.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"bag3sling.jpg\",\"size\":270647,\"mime_type\":\"image/jpeg\",\"width\":1364,\"height\":2048}}"], ["price", 0], ["sold_at", nil], ["secret_shop_key", "[FILTERED]"], ["created_at", "2023-06-18 20:47:21.416778"], ["updated_at", "2023-06-18 20:47:21.416778"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBag Update (0.8ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"a3b7007c77ed7f6dd2221cf8f5a2decb.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag3sling.jpg\",\"size\":270647,\"mime_type\":\"image/jpeg\",\"width\":1364,\"height\":2048}}"], ["updated_at", "2023-06-18 20:47:22.899447"], ["id", 3]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBag Create (1.9ms)[0m  [1m[32mINSERT INTO "bags" ("name", "sold", "stored", "shop_id", "category_id", "image_data", "price", "sold_at", "secret_shop_key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Loui Viton"], ["sold", 0], ["stored", 1], ["shop_id", 1], ["category_id", 4], ["image_data", "{\"id\":\"b27fb050b2f0afdf0989b8d8084217c0.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"bag4fannypack.jpg\",\"size\":87128,\"mime_type\":\"image/jpeg\",\"width\":484,\"height\":1024}}"], ["price", 0], ["sold_at", nil], ["secret_shop_key", "[FILTERED]"], ["created_at", "2023-06-18 20:47:24.837848"], ["updated_at", "2023-06-18 20:47:24.837848"]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBag Update (0.5ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"9b3b8f20ce732690b3842e25b3b0612f.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag4fannypack.jpg\",\"size\":87128,\"mime_type\":\"image/jpeg\",\"width\":484,\"height\":1024}}"], ["updated_at", "2023-06-18 20:47:26.174448"], ["id", 4]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m

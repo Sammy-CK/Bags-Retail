@@ -50,9 +50,9 @@ function StoreCategoryPage(){
     }, [])
 
     let categoryBox = categories.map(category => {
-     let currentlyStoredBags = category.bags.filter(bag => bag.stored === true)
+     let currentlyStoredBags = category.bags.filter(bag => bag.secret_shop_key === 1)
         return(
-            <li onClick={() => {
+            <li key={category.id} onClick={() => {
                 takeCategory(`/store/category/${category.id}`)
                 }}>
                 <p>{currentlyStoredBags.length}</p><p>{category.name}</p>
