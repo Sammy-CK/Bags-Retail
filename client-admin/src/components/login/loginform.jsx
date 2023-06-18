@@ -1,10 +1,12 @@
 import { React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { storeStaffDetails } from '../../redux/staffSlice'
+import { useNavigate } from 'react-router-dom'
+
 
 
 function LogInForm(){
-
+    const takeStore = useNavigate();
     const [logInDetails, setLogInDetails] = useState({})
     const staff = useSelector((state) => state.staff.staff)
     const dispatch = useDispatch()
@@ -29,7 +31,7 @@ function LogInForm(){
                 return resp.json().then(data => {
                     dispatch(storeStaffDetails(data))
                     console.log(staff)
-                
+                    takeStore('/store')                
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")

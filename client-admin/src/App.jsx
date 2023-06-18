@@ -1,13 +1,21 @@
 import { useState } from 'react'
-import LogInForm from './components/login/loginform';
 import './App.css'
+import {Routes, Route} from 'react-router-dom'
+import LogInForm from './components/login/loginform';
+import StoreCategoryPage from './components/store/storeCategoryPage';
+import StoreIndividualCategoryPage from './components/store/storeIndividualCategoryPage'
+
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
       <div>
-        < LogInForm />
+        <Routes>
+    <Route path='/' element={< LogInForm />} />
+    <Route path='/store' element={< StoreCategoryPage />} />
+    <Route path='/store/category/:categoryID' element={< StoreIndividualCategoryPage />} />
+
+
+        </Routes>
       </div>
   )
 }
