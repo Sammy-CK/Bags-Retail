@@ -1,9 +1,13 @@
 import { React, useState } from 'react';
-// import { useState } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { storeStaffDetails } from '../../redux/staffSlice'
+
 
 function LogInForm(){
 
     const [logInDetails, setLogInDetails] = useState({})
+    const staff = useSelector((state) => state.staff.staff)
+    const dispatch = useDispatch()
 
     const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -20,14 +24,17 @@ function LogInForm(){
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(logInDetails),
-        }).then(resp => {
+        }).then(resp => {           
             if (resp.ok){
-                return resp.json()
+                return resp.json().then(data => {
+                    dispatch(storeStaffDetails(data))
+                    console.log(staff)
+                
+                })
             }else{
                 console.log("Thats CAP LIL'NIGGA")
             }
-        }).then(data => console.log(data))
-
+        })
     };
 
 return(
