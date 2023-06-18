@@ -22,7 +22,8 @@ function StoreCategoryPage(){
             if (resp.ok){
                 return resp.json().then(data => {
                     console.log(data)
-                    setCategories(data.map(category => {category.bags.filter(bag => bag.shop_id === 1)}));
+                    // setCategories(data.map(category => {category.bags.filter(bag => bag.shop_id === 1)}));
+                    setCategories(data)
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")
@@ -49,11 +50,12 @@ function StoreCategoryPage(){
     }, [])
 
     let categoryBox = categories.map(category => {
+     let currentlyStoredBags = category.bags.filter(bag => bag.stored === true)
         return(
             <li onClick={() => {
                 takeCategory(`/store/category/${category.id}`)
                 }}>
-                <p>{category.bags.length}</p><p>{category.name}</p>
+                <p>{currentlyStoredBags.length}</p><p>{category.name}</p>
             </li>
         )
     })

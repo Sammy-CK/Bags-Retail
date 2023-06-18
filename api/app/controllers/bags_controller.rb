@@ -46,6 +46,6 @@ class BagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bag_params
-      params.permit(:name, :sold, :stored, :shop_id, :category_id, :image, :price, :sold_at)
+      params.permit(:name, :sold, :stored, :shop_id, :category_id, :image, :price, :sold_at, :secret_shop_key)
     end
 end

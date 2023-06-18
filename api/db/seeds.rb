@@ -22,10 +22,10 @@ Category.create!(name:"backpack")
 Category.create!(name:"sling")
 Category.create!(name:"fannypack")
 
-Bag.create!( name:"Gucci", sold:false, stored:true, shop_id:1, category_id:1, image:File.new("#{Rails.root}/app/assets/images/bag1travel.jpg") , price:0, sold_at:nil)
-Bag.create!( name:"Coco", sold:false, stored:true, shop_id:1, category_id:2, image:File.new("#{Rails.root}/app/assets/images/bag2backpack.jpg") , price:0, sold_at:nil)
-Bag.create!( name:"Channel", sold:false, stored:true, shop_id:1, category_id:3, image:File.new("#{Rails.root}/app/assets/images/bag3sling.jpg") , price:0, sold_at:nil)
-Bag.create!( name:"Loui Viton", sold:false, stored:true, shop_id:1, category_id:4, image:File.new("#{Rails.root}/app/assets/images/bag4fannypack.jpg") , price:0, sold_at:nil)
+Bag.create!( name:"Gucci", sold:false, stored:true, shop_id:1, category_id:1, image:File.new("#{Rails.root}/app/assets/images/bag1travel.jpg") , price:0, sold_at:nil, secret_shop_key: 1)
+Bag.create!( name:"Coco", sold:false, stored:true, shop_id:1, category_id:2, image:File.new("#{Rails.root}/app/assets/images/bag2backpack.jpg") , price:0, sold_at:nil, secret_shop_key: 1)
+Bag.create!( name:"Channel", sold:false, stored:true, shop_id:1, category_id:3, image:File.new("#{Rails.root}/app/assets/images/bag3sling.jpg") , price:0, sold_at:nil, secret_shop_key: 1)
+Bag.create!( name:"Loui Viton", sold:false, stored:true, shop_id:1, category_id:4, image:File.new("#{Rails.root}/app/assets/images/bag4fannypack.jpg") , price:0, sold_at:nil, secret_shop_key: 1)
 
 
 
