@@ -8,6 +8,7 @@ import StoreAssignBagShopPage from './components/store/storeAssignBagShopPage';
 import StoreAddBagPage from './components/store/storeAddBagPage';
 import AllShopsPage from './components/shop/allShopsPage';
 import AddShopPage from './components/shop/addShopPage';
+import ShopCategoryPage from './components/shop/shopCategoryPage';
 
 
 
@@ -22,6 +23,7 @@ function App() {
     <Route path='/store/new' element={< StoreAddBagPage />} />
     <Route path='/shops' element={< AllShopsPage />} />
     <Route path='/shops/new' element={< AddShopPage />} />
+    <Route path='/shops/:shopID' element={< ShopCategoryPage />} />
 
 
         </Routes>
