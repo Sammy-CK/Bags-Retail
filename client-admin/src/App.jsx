@@ -9,6 +9,7 @@ import StoreAddBagPage from './components/store/storeAddBagPage';
 import AllShopsPage from './components/shop/allShopsPage';
 import AddShopPage from './components/shop/addShopPage';
 import ShopCategoryPage from './components/shop/shopCategoryPage';
+import ShopIndividualCategoryPage from './components/shop/shopIndividualCategoryPage'
 
 
 
@@ -24,6 +25,8 @@ function App() {
     <Route path='/shops' element={< AllShopsPage />} />
     <Route path='/shops/new' element={< AddShopPage />} />
     <Route path='/shops/:shopID' element={< ShopCategoryPage />} />
+    <Route path='/shops/:shopID/categories/:categoryID' exact element={< ShopIndividualCategoryPage />} />
+
 
 
         </Routes>

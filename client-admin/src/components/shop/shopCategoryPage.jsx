@@ -32,7 +32,7 @@ function ShopCategoryPage(){
             }
         })
 
-        //Fetching store bags
+        //Fetching shop bags
         fetch(`https://bags-o7py.onrender.com/shops/${shopID}`, {
             method: "GET",
 			headers: {
