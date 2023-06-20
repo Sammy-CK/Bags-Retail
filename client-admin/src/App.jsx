@@ -10,6 +10,8 @@ import AllShopsPage from './components/shop/allShopsPage';
 import AddShopPage from './components/shop/addShopPage';
 import ShopCategoryPage from './components/shop/shopCategoryPage';
 import ShopIndividualCategoryPage from './components/shop/shopIndividualCategoryPage'
+import AllStaffPage from './components/staff/allStaffPage';
+import IndividualStaffPage from './components/staff/individualStaffPage';
 
 
 
@@ -26,6 +28,10 @@ function App() {
     <Route path='/shops/new' element={< AddShopPage />} />
     <Route path='/shops/:shopID' element={< ShopCategoryPage />} />
     <Route path='/shops/:shopID/categories/:categoryID' exact element={< ShopIndividualCategoryPage />} />
+    <Route path='/staffs' element={< AllStaffPage />} />
+    <Route path='/staffs/:staffID' element={< IndividualStaffPage />} />
+
+
 
 
 

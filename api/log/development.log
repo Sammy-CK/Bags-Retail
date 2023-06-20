@@ -1757,3 +1757,28 @@ Migrating to CreateBags (20230610091904)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mBag Update (0.5ms)[0m  [1m[33mUPDATE "bags" SET "image_data" = ?, "updated_at" = ? WHERE "bags"."id" = ?[0m  [["image_data", "{\"id\":\"9b3b8f20ce732690b3842e25b3b0612f.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"bag4fannypack.jpg\",\"size\":87128,\"mime_type\":\"image/jpeg\",\"width\":484,\"height\":1024}}"], ["updated_at", "2023-06-18 20:47:26.174448"], ["id", 4]]
   [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-06-20 11:16:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sam/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sam/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 705)
+Completed 200 OK in 54ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 5222)
+
+
+Started GET "/login/" for 127.0.0.1 at 2023-06-20 11:18:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login/" for 127.0.0.1 at 2023-06-20 11:19:04 +0300
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"test", "password"=>"[FILTERED]", "auth"=>{"name"=>"test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth. Context: { controller: AuthController, action: create, request: #<ActionDispatch::Request:0x00007f2bd8009a00>, params: {"name"=>"test", "password"=>"[FILTERED]", "controller"=>"auth", "action"=>"create", "auth"=>{"name"=>"test", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mStaff Load (1.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[31mUnpermitted parameter: :auth. Context: { controller: AuthController, action: create, request: #<ActionDispatch::Request:0x00007f2bd8009a00>, params: {"name"=>"test", "password"=>"[FILTERED]", "controller"=>"auth", "action"=>"create", "auth"=>{"name"=>"test", "password"=>"[FILTERED]"}} }[0m
+[active_model_serializers]   [1m[36mShop Load (0.6ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (59.21ms)
+Completed 202 Accepted in 496ms (Views: 61.6ms | ActiveRecord: 5.5ms | Allocations: 33694)
+
+
