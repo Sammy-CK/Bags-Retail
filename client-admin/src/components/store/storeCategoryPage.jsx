@@ -62,6 +62,7 @@ function StoreCategoryPage(){
 
     return(
         <div>
+        <h2 onClick={() => takeCategory('/categories/new')}>CATEGORY</h2>
         <h2 onClick={() => takeCategory('/shops')}>STORE</h2>
         <h2 onClick={() => takeCategory('/staffs')}>STAFF</h2>
 

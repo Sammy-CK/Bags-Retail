@@ -13,6 +13,8 @@ import ShopIndividualCategoryPage from './components/shop/shopIndividualCategory
 import AllStaffPage from './components/staff/allStaffPage';
 import IndividualStaffPage from './components/staff/individualStaffPage';
 import AddStaffPage from './components/staff/addStaffPage';
+import AddCategoryPage from './components/category/addCategoryPage';
+
 
 
 function App() {
@@ -31,10 +33,7 @@ function App() {
     <Route path='/staffs' element={< AllStaffPage />} />
     <Route path='/staffs/:staffID' element={< IndividualStaffPage />} />
     <Route path='/staffs/new' element={< AddStaffPage />} />
-
-
-
-
+    <Route path='/categories/new' element={< AddCategoryPage />} />
 
         </Routes>
       </div>
