@@ -46,7 +46,7 @@ function StoreAssignBagShopPage(){
 
     let choiceShopForBag = currentShops.map(shop => {
         return(
-            <div>
+            <div key={shop.id}>
             <input type="radio" id="html" name="fav_language" value={shop.id} onChange={handleShopSelection} />
                 <label htmlFor="html">{shop.name}</label>
             </div>

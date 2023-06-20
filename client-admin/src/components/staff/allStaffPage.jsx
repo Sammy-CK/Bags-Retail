@@ -38,6 +38,7 @@ function AllStaffPage(){
     return (
         <div>
             <h2>STAFF</h2>
+            <button onClick={() => takeStaff('/staffs/new')}>ADD STAFF</button>
             <ul>
                 {shownStaff}
             </ul>

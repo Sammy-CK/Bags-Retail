@@ -12,7 +12,7 @@ import ShopCategoryPage from './components/shop/shopCategoryPage';
 import ShopIndividualCategoryPage from './components/shop/shopIndividualCategoryPage'
 import AllStaffPage from './components/staff/allStaffPage';
 import IndividualStaffPage from './components/staff/individualStaffPage';
-
+import AddStaffPage from './components/staff/addStaffPage';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
     <Route path='/shops/:shopID/categories/:categoryID' exact element={< ShopIndividualCategoryPage />} />
     <Route path='/staffs' element={< AllStaffPage />} />
     <Route path='/staffs/:staffID' element={< IndividualStaffPage />} />
+    <Route path='/staffs/new' element={< AddStaffPage />} />
 
 
 
