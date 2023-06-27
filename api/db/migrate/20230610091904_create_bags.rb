@@ -8,7 +8,7 @@ class CreateBags < ActiveRecord::Migration[7.0]
       t.integer :category_id
       t.text :image_data
       t.integer :price
-      t.date :sold_at
+      t.string :sold_at
       t.integer :secret_shop_key
 
       t.timestamps
