@@ -52,7 +52,7 @@ function ShopIndividualCategoryPage(){
     let shownCategoryBags = categoryBags.map(categoryBag => {
         return(
         <li key={categoryBag.id}><p>name: {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> <button onClick={() => {
-            takeConfirmPage(`/shops/${shopID}/categories/${categoryID}/bag/${categoryBag.id}/confirm`)
+            takeConfirmPage(`/shops/${shopID}/categories/${categoryID}/bags/${categoryBag.id}/confirm`)
         }}>SELL</button> </li>
         )
     })

@@ -20,7 +20,7 @@ function App() {
     <Route path='/' element={< LogInPage />} />
     <Route path='/shops/:shopID' element={< ShopCategoryPage />} />
     <Route path='/shops/:shopID/categories/:categoryID' exact element={< ShopIndividualCategoryPage />} />
-    <Route path='/shops/:shopID/categories/:categoryID/bags/:bagID' exact element={< ShopSaleConfirm />} />
+    <Route path='/shops/:shopID/categories/:categoryID/bags/:bagID/confirm' exact element={< ShopSaleConfirm />} />
 
         </Routes>
     </div>

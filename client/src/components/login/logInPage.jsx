@@ -30,8 +30,8 @@ function LogInPage(){
             if (resp.ok){
                 return resp.json().then(data => {
                     dispatch(storeStaffDetails(data))
-                    console.log(staff)
-                    takeStore(`/shops/${data.shop.id}`)           
+                    console.log(data)
+                    takeStore(`/shops/${data.staff.shop.id}`)           
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")
