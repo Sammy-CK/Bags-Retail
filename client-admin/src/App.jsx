@@ -14,6 +14,8 @@ import AllStaffPage from './components/staff/allStaffPage';
 import IndividualStaffPage from './components/staff/individualStaffPage';
 import AddStaffPage from './components/staff/addStaffPage';
 import AddCategoryPage from './components/category/addCategoryPage';
+import SalesPage from './components/sale/salesPage';
+
 
 
 
@@ -34,6 +36,7 @@ function App() {
     <Route path='/staffs/:staffID' element={< IndividualStaffPage />} />
     <Route path='/staffs/new' element={< AddStaffPage />} />
     <Route path='/categories/new' element={< AddCategoryPage />} />
+    <Route path='/sales' element={< SalesPage />} />
 
         </Routes>
       </div>

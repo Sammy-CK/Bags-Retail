@@ -65,6 +65,8 @@ function StoreCategoryPage(){
         <h2 onClick={() => takeCategory('/categories/new')}>CATEGORY</h2>
         <h2 onClick={() => takeCategory('/shops')}>STORE</h2>
         <h2 onClick={() => takeCategory('/staffs')}>STAFF</h2>
+        <h2 onClick={() => takeCategory('/sales')}>SALES</h2>
+
 
         <p>TOTAL: {storedBags.length}</p>
         <button onClick={() => takeCategory('/store/new')}>ADD BAG</button>
