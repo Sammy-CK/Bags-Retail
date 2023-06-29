@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom';
+import './storeIndividualCategoryPageStyle.css'
 
 function StoreIndividualCategoryPage(){
     const takeCategoryBag = useNavigate();
@@ -32,7 +33,7 @@ function StoreIndividualCategoryPage(){
 
     let shownCategoryBags = categoryBags.map(categoryBag => {
         return(
-        <li key={categoryBag.id}><p>name: {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> <button onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
+        <li className="bags-li" key={categoryBag.id}><p className="bags-name">name: {categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="100px" height="100px"/> <button className="bags-btn" onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
         )
     })
     
@@ -41,8 +42,8 @@ function StoreIndividualCategoryPage(){
         <div>
             <h2>STORE</h2>
             <h3>{categoryName}</h3>
-            <p>TOTAL: {categoryBags.length}</p>
-            <ul>
+            <p className='total-individual'>TOTAL: {categoryBags.length}</p>
+            <ul className='bags-ul'>
             {shownCategoryBags}
             </ul>
         </div>

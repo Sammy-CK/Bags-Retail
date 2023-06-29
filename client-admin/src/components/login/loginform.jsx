@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { storeStaffDetails } from '../../redux/staffSlice'
 import { useNavigate } from 'react-router-dom'
+import './login.css'
 
 
 
@@ -31,26 +32,37 @@ function LogInForm(){
                 return resp.json().then(data => {
                     dispatch(storeStaffDetails(data))
                     console.log(staff)
-                    takeStore('/store')                
+                    takeStore('/store')   
+                    setLogInDetails({name: "", password: ""})
                 })
             }else{
-                console.log("Thats CAP LIL'NIGGA")
+                setLogInDetails({name: "", password: ""})
+                alert("No matching username and password")
             }
         })
     };
 
 return(
-    <form onSubmit={handleSubmit} >
-        <div>
-            <h3>USERNAME</h3>
-            <input type='text' name="name" onChange={handleChange} value={logInDetails.name}/>
+    <div className="login-page">
+    <div className="signup-card login-top">
+      <h1>LOGIN</h1>
+    <form onSubmit={handleSubmit} className='login-form'>
+        <div className="txt_field">
+            <h4>USERNAME</h4>
+            <input type='text' className='login-input' name="name" required onChange={handleChange} value={logInDetails.name}/>
         </div>
-        <div>
-            <h3>PASSWORD</h3>
-            <input type='password' name="password" onChange={handleChange} value={logInDetails.password} />
+        <div className="txt_field">
+            <h4>PASSWORD</h4>
+            <input type='password' className='login-input' name="password" required onChange={handleChange} value={logInDetails.password} />
         </div>
-        <input type='submit' value="LOGIN" />
+        <div className="buttons">
+        <button type="submit" className='login-btn'>Login</button>
+        </div>
     </form>
+    </div>
+    </div>
+
+
     )
 }
 

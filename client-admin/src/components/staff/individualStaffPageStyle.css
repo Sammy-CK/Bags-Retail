@@ -1,0 +1,13 @@
+.indstaff-div{
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    background-color: gray;
+    border-radius: 5px;
+    
+}
+
+.indStaff-p{
+    /* float: left; */
+    clear: both;
+}

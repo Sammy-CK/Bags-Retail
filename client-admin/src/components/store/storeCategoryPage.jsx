@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import './storedCategoryPageStyle.css';
 
 
 function StoreCategoryPage(){
@@ -52,7 +53,7 @@ function StoreCategoryPage(){
     let categoryBox = categories.map(category => {
      let currentlyStoredBags = category.bags.filter(bag => bag.secret_shop_key === 1)
         return(
-            <li key={category.id} onClick={() => {
+            <li className="category-li" key={category.id} onClick={() => {
                 takeCategory(`/store/category/${category.id}`)
                 }}>
                 <p>{currentlyStoredBags.length}</p><p>{category.name}</p>
@@ -61,17 +62,15 @@ function StoreCategoryPage(){
     })
 
     return(
-        <div>
-        <h2 onClick={() => takeCategory('/categories/new')}>CATEGORY</h2>
-        <h2 onClick={() => takeCategory('/shops')}>STORE</h2>
-        <h2 onClick={() => takeCategory('/staffs')}>STAFF</h2>
-        <h2 onClick={() => takeCategory('/sales')}>SALES</h2>
+        <div className='store-div'>
+        <div className='total-div'>
+        <p>TOTAL: {storedBags.length} <button className='add-btn' onClick={() => takeCategory('/store/new')}>ADD BAG</button></p>
+        </div>
+        
+        <h2>STORE</h2>
 
-
-        <p>TOTAL: {storedBags.length}</p>
-        <button onClick={() => takeCategory('/store/new')}>ADD BAG</button>
         <h3>CATEGORIES</h3>
-        <ul>
+        <ul className="category-ul" >
             {categoryBox}
         </ul>
 

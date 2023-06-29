@@ -15,13 +15,15 @@ import IndividualStaffPage from './components/staff/individualStaffPage';
 import AddStaffPage from './components/staff/addStaffPage';
 import AddCategoryPage from './components/category/addCategoryPage';
 import SalesPage from './components/sale/salesPage';
+import NavBar from './components/navbar/navBar';
 
 
 
 
 function App() {
   return (
-      <div>
+      <div className='site-div'>
+        <NavBar />
         <Routes>
     <Route path='/' element={< LogInForm />} />
     <Route path='/store' element={< StoreCategoryPage />} />

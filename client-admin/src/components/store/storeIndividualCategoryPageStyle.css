@@ -1,0 +1,41 @@
+.total-individual{
+    text-align: right;
+    padding: 10px;
+}
+
+.bags-ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: start;
+}
+
+.bags-li{
+    list-style: none;
+    border: thin gray solid;
+    min-width: 70%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.bags-name{
+    float: left;
+    margin-left: 10%;
+    margin-top: 30px;
+    width: 12%;
+}
+
+.bags-btn{
+    float: right;
+    margin-right: 10%;
+    margin-top: 30px;
+    width: 12%;
+}
+
+.bags-img{
+    float: left;
+    margin-left: 10%;
+    width: 15%;
+
+}

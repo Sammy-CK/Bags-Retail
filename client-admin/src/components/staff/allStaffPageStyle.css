@@ -1,0 +1,19 @@
+.addstaff-btn{
+    float: right;
+}
+
+.staffs-ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: start;
+}
+
+.staffs-li{
+    list-style: none;
+    border: thin gray solid;
+    min-width: 70%;
+    text-align: center;
+    margin: 10px auto;
+}

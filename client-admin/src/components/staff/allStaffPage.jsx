@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import './allStaffPageStyle.css'
 
 function AllStaffPage(){
 
@@ -31,15 +32,15 @@ function AllStaffPage(){
 
     let shownStaff = staffs.map(staff => {
         return(
-            <li key={staff.id} onClick={() => takeStaff(`/staffs/${staff.id}`)}><p>NAME: {staff.name}</p> PHONE NUMBER<p>{staff.phone_number}</p><p>SHOP: {staff.shop.name}</p></li>
+            <li className="staffs-li" key={staff.id} onClick={() => takeStaff(`/staffs/${staff.id}`)}><p>NAME: {staff.name}</p> PHONE NUMBER<p>{staff.phone_number}</p><p>SHOP: {staff.shop.name}</p></li>
         )
     })
 
     return (
         <div>
-            <h2>STAFF</h2>
-            <button onClick={() => takeStaff('/staffs/new')}>ADD STAFF</button>
-            <ul>
+            <h2 >STAFF</h2>
+            <button className="addstaff-btn" onClick={() => takeStaff('/staffs/new')}>ADD STAFF</button>
+            <ul className="staffs-ul">
                 {shownStaff}
             </ul>
         </div>

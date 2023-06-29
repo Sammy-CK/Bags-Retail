@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import './individualStaffPageStyle.css'
 
 function IndividualStaffPage(){
 
@@ -54,17 +55,19 @@ useEffect(() => {
 
 
     return(
-        <div>
+        <>
             <h2>{staff.name}</h2>
-            <h4>NAME</h4> <p>{staff.name}</p>
-            <h4>PASSWORD</h4> <p>{staff.password}</p>
-            <h4>PHONE NUMBER</h4> <p>{staff.phone_number}</p>
-            <h4>SHOP</h4> <p>{currentShop}</p>
+            <div className='indstaff-div'>
+            <div className='indStaff-p'><p><h4>NAME</h4> <p>{staff.name}</p></p></div>
+            <div className='indStaff-p'><h4>PHONE NUMBER</h4> <p>{staff.phone_number}</p></div>
+            <div className='indStaff-p'><h4>SHOP</h4> <p>{currentShop}</p></div>
             <button onClick={() => takeStaffs('/staffs') }>Back</button>
             <button onClick={ handleClick }>Delete</button>
 
 
         </div>
+        </>
+
     )
 }
 

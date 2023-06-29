@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import './storeAssignBagShopPageStyle.css'
 
 
 function StoreAssignBagShopPage(){
@@ -46,7 +47,7 @@ function StoreAssignBagShopPage(){
 
     let choiceShopForBag = currentShops.map(shop => {
         return(
-            <div key={shop.id}>
+            <div className='choice-li' key={shop.id}>
             <input type="radio" id="html" name="fav_language" value={shop.id} onChange={handleShopSelection} />
                 <label htmlFor="html">{shop.name}</label>
             </div>
@@ -55,6 +56,7 @@ function StoreAssignBagShopPage(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("ndio kuondoka")
             // Fetch assigning current bag from store to shop
             if (selectedShop) {
 
@@ -74,15 +76,17 @@ function StoreAssignBagShopPage(){
     
                     })
                 }else{
-                    console.log("Thats CAP LIL'NIGGA")
+                    alert("Please Select Shop")
                 }
             })
+        }else{
+                    alert("Please Select Shop")
         }
         }
 
 
     return(
-        <div>
+        <div className='choice-div'>
             <h3>CHOOSE SHOP</h3>
             <form>
             {choiceShopForBag}

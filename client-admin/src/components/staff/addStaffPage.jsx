@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import './addStaffPageStyle.css'
 
 function AddStaffPage(){
 
@@ -59,12 +60,16 @@ function AddStaffPage(){
                         console.log(data)
                         alert("Created Successfully")
                         takeToCreateStaffOrNotToCreate(`/staffs`)
+                        setNewStaff((prevState) => {});
     
                     })
                 }else{
                     console.log("Thats CAP LIL'NIGGA")
                 }
             })
+        }else{
+            alert("Please select shop!")
+            setNewStaff((prevState) => ({name: "", password: "", phone_number: ""}));        
         }
         }
 
@@ -84,21 +89,28 @@ function AddStaffPage(){
         })
 
     return (
-        <div>
-            <form>
-                <label htmlFor='name' >NAME</label>
-                <input type='text' name='name' value={newStaff.name} onChange={handleChange} /><br/>
-                <label htmlFor='password' >PASSWORD</label>
-                <input type='password' name='password' value={newStaff.password} onChange={handleChange} /><br/>
-                <label htmlFor='phone_number' >PHONE NUMBER</label>
-                <input type='text' name='phone_number' value={newStaff.phone_number} onChange={handleChange} /><br/>
+        <div className='newbag-form'>
+            <form onSubmit={handleSubmit}>
+            <div className='row-form'>
+                <label className='newbag-label' htmlFor='name' >NAME</label>
+                <input type='text' required name='name' value={newStaff.name} onChange={handleChange} />
+            </div>
+            <div className='row-form'>
+                <label className='newbag-label' htmlFor='password' >PASSWORD</label>
+                <input type='password' required name='password' value={newStaff.password} onChange={handleChange} /><br/>
+            </div>
+            <div className='row-form'>
+                <label className='newbag-label' htmlFor='phone_number' >PHONE NUMBER</label>
+                <input type='text' name='phone_number' required value={newStaff.phone_number} onChange={handleChange} /><br/>
                 {choiceShopForStaff}
+            </div>
                 
-            <button onClick={(e) => {
+
+            <button className='submit-formbtn  jigjog' type='submit'>Create</button>
+            <button className=' jigjog' onClick={(e) => {
                 e.preventDefault()
                 takeToCreateStaffOrNotToCreate('/staffs')
                 } }>Back</button>
-            <button onClick={ handleSubmit }>Create</button>
 
             </form>
 

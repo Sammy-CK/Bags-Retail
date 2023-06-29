@@ -1,12 +1,12 @@
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-
+import './storeAddBagPageStyle.css'
 
 function StoreAddBagPage(){
 
     const takeToCreateBagOrNotToCreate = useNavigate();
-    let [newBag, setNewBag] = useState({})
+    let [newBag, setNewBag] = useState({category_id: 1})
     let token = useSelector((state) => state.staff.staff.jwt)
     const [categories, setCategories] = useState([])
 
@@ -69,6 +69,7 @@ function StoreAddBagPage(){
                         console.log(data)
                         alert("Created Successfully")
                         takeToCreateBagOrNotToCreate(`/store`)
+                        setNewBag((prev) => {})
     
                     })
                 }else{
@@ -80,22 +81,30 @@ function StoreAddBagPage(){
 
 
     return (
-        <div>
+        <div className='newbag-form'>
             <form onSubmit={handleSubmit}>
-               <label htmlFor='name'>NAME</label> <input type="text" name="name" onChange={handleChange} value={newBag.name}/> <br/>    
-               <label htmlFor='category'>CATEGORY</label>    
+                <div className='row-form'>
+               <label className='newbag-label' htmlFor='name'>NAME</label>
+               <input type="text" required name="name" onChange={handleChange} value={newBag.name}/> <br/>    
+               </div>
+               <div className='row-form'>
+               <label className='newbag-label' htmlFor='category'>CATEGORY</label>    
                 <select name='category_id' onChange={handleChange}>
                     {categoryOptions}
                 </select> <br/>
-               <label htmlFor='image'>IMAGE</label> <input
+                </div>
+                <div className='row-form'>
+               <label className='newbag-label' htmlFor='image'>IMAGE</label> <input
 				type="file"
 				accept="image/png, image/jpeg"
 				onChange={handleImageChange}
 				name="image"
 				required
-			/>
-            <button onClick={() => takeToCreateBagOrNotToCreate('/store')}>Cancel</button>
-            <button type='submit'>Create</button>
+			    />
+                </div>
+                <button className='submit-formbtn jigjog' type='submit'>Create</button>
+                <button className='jigjog' onClick={() => takeToCreateBagOrNotToCreate('/store')}>Cancel</button>
+                
             </form>
 
         </div>

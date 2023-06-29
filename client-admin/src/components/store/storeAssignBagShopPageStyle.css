@@ -1,0 +1,14 @@
+.choice-div{
+    padding-top: 5%;
+    text-align: center;
+}
+
+.choice-li{
+    margin: 10px;
+}
+
+button{
+    margin: 0px 10px;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
