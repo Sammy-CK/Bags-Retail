@@ -12,3 +12,12 @@ button{
     border-radius: 4px;
     padding: 2px 5px;
 }
+
+.assign-form{
+    margin-top: 30px;
+    border: thin solid gray;
+    width: 20%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 12px;
+}

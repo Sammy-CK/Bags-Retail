@@ -16,4 +16,19 @@
     min-width: 70%;
     text-align: center;
     margin: 10px auto;
+    border-radius: 12px;
+}
+
+.staffs-li > p{
+    float: left;
+    width: 33%;
+    text-align: center;
+
+}
+
+.cover{
+    border: none;
+    border-bottom: solid thin black;
+    border-radius: 0px;
+    font-weight: bolder;
 }

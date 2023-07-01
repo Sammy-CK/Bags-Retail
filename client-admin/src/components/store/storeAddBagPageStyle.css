@@ -1,7 +1,10 @@
 .newbag-form{
     text-align: left;
     width: 30%;
-    margin: 10% auto 10px;
+    margin:  10px auto;
+    border: thin solid gray;
+    padding: 15px 0px 50px 10px;
+    border-radius: 12px;
 }
 
 .row-form{
@@ -17,6 +20,6 @@
     float: right;
 }
 
-.submit-formbtn{
-    margin-right: 25%;
+.submit-formbtnr{
+    margin-right: 30px;
 }

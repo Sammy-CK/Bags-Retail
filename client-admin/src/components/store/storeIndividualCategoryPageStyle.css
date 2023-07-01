@@ -5,37 +5,32 @@
 
 .bags-ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content:start;
     align-items: start;
 }
 
 .bags-li{
     list-style: none;
     border: thin gray solid;
-    min-width: 70%;
+    min-width: 200px;
+    min-height: 200px;
     text-align: center;
-    margin: 10px auto;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .bags-name{
-    float: left;
-    margin-left: 10%;
-    margin-top: 30px;
-    width: 12%;
+    margin-top: 10px;
 }
 
 .bags-btn{
-    float: right;
     margin-right: 10%;
-    margin-top: 30px;
-    width: 12%;
+    margin-top: 20px;
 }
 
 .bags-img{
-    float: left;
-    margin-left: 10%;
-    width: 15%;
-
+    margin-left: 2%;
 }

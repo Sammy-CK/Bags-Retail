@@ -88,7 +88,7 @@ function StoreAssignBagShopPage(){
     return(
         <div className='choice-div'>
             <h3>CHOOSE SHOP</h3>
-            <form>
+            <form className='assign-form'>
             {choiceShopForBag}
             <button onClick={(e) => {
                 e.preventDefault();

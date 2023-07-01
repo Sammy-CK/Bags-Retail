@@ -25,14 +25,16 @@ h3{
 .category-li{
     list-style: none;
     border: thin gray solid;
-    min-width: 100px;
+    min-width: 80%;
     text-align: center;
-    margin: 10px 30px;
+    margin: 10px auto;
+    border-radius: 12px;
+    padding: 5px;
 }
 
 .category-ul{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content:flex-start;
     align-items: start;

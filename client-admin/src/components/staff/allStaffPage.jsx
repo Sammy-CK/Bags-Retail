@@ -32,15 +32,16 @@ function AllStaffPage(){
 
     let shownStaff = staffs.map(staff => {
         return(
-            <li className="staffs-li" key={staff.id} onClick={() => takeStaff(`/staffs/${staff.id}`)}><p>NAME: {staff.name}</p> PHONE NUMBER<p>{staff.phone_number}</p><p>SHOP: {staff.shop.name}</p></li>
+            <li className="staffs-li" key={staff.id} onClick={() => takeStaff(`/staffs/${staff.id}`)}><p>{staff.name}</p><p>{staff.phone_number}</p><p>{staff.shop.name}</p></li>
         )
     })
 
     return (
         <div>
-            <h2 >STAFF</h2>
+            <h2 >STAFF</h2><hr/>
             <button className="addstaff-btn" onClick={() => takeStaff('/staffs/new')}>ADD STAFF</button>
             <ul className="staffs-ul">
+                <li className="staffs-li cover"><p>NAME</p><p>PHONE NUMBER</p><p>SHOP</p></li><hr />
                 {shownStaff}
             </ul>
         </div>

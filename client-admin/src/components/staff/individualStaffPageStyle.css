@@ -1,13 +1,39 @@
 .indstaff-div{
-    width: 30%;
+    width: 25%;
     margin: 10px auto;
     text-align: center;
-    background-color: gray;
     border-radius: 5px;
+    border: thin solid;
+    padding: 20px;
+    min-height: 200px;
     
 }
 
 .indStaff-p{
-    /* float: left; */
     clear: both;
+}
+
+
+.indStaff-p > h4{
+    float: left;
+    padding-left: 10px;
+}
+
+.indStaff-p > p{
+    margin-right: 37%;
+    text-align: left;
+    width: 30%;
+    padding-top: 5px;
+    float: right;
+
+}
+
+.btn-1{
+    clear: both;
+    float: right;
+}
+
+.btn-12{
+    /* clear: both; */
+    float: right;
 }

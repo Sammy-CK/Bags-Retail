@@ -58,11 +58,11 @@ useEffect(() => {
         <>
             <h2>{staff.name}</h2>
             <div className='indstaff-div'>
-            <div className='indStaff-p'><p><h4>NAME</h4> <p>{staff.name}</p></p></div>
-            <div className='indStaff-p'><h4>PHONE NUMBER</h4> <p>{staff.phone_number}</p></div>
-            <div className='indStaff-p'><h4>SHOP</h4> <p>{currentShop}</p></div>
-            <button onClick={() => takeStaffs('/staffs') }>Back</button>
-            <button onClick={ handleClick }>Delete</button>
+            <div className='indStaff-p'><h4>NAME:</h4> <p>{staff.name}</p></div>
+            <div className='indStaff-p'><h4>PHONE:</h4> <p>{staff.phone_number}</p></div>
+            <div className='indStaff-p'><h4>SHOP:</h4> <p>{currentShop}</p></div><br />
+            <button className="btn-1" onClick={ handleClick } >Delete</button>
+            <button className="btn-12" onClick={() => takeStaffs('/staffs') } >Back</button><br/>
 
 
         </div>

@@ -81,7 +81,7 @@ function AddStaffPage(){
 
         let choiceShopForStaff = currentShops.map(shop => {
             return(
-                <div key={shop.id}>
+                <div className='input-x' key={shop.id}>
                 <input type="radio" id="html" name="shop_id" value={shop.id} onChange={handleShopSelection} />
                     <label htmlFor="html">{shop.name}</label>
                 </div>
@@ -92,19 +92,21 @@ function AddStaffPage(){
         <div className='newbag-form'>
             <form onSubmit={handleSubmit}>
             <div className='row-form'>
-                <label className='newbag-label' htmlFor='name' >NAME</label>
-                <input type='text' required name='name' value={newStaff.name} onChange={handleChange} />
+                <label className='newbag-label' htmlFor='name' >NAME:</label>
+                <input type='text' className='input-x' required name='name' value={newStaff.name} onChange={handleChange} />
             </div>
             <div className='row-form'>
-                <label className='newbag-label' htmlFor='password' >PASSWORD</label>
-                <input type='password' required name='password' value={newStaff.password} onChange={handleChange} /><br/>
+                <label className='newbag-label' htmlFor='password' >PASSWORD:</label>
+                <input type='password' className='input-x' required name='password' value={newStaff.password} onChange={handleChange} /><br/>
             </div>
             <div className='row-form'>
-                <label className='newbag-label' htmlFor='phone_number' >PHONE NUMBER</label>
-                <input type='text' name='phone_number' required value={newStaff.phone_number} onChange={handleChange} /><br/>
-                {choiceShopForStaff}
+                <label className='newbag-label' htmlFor='phone_number' >PHONE NUMBER:</label>
+                <input type='text' className='input-x' name='phone_number' required value={newStaff.phone_number} onChange={handleChange} /><br/>
             </div>
-                
+            <div className='row-form'>
+            <label className='newbag-label' htmlFor='phone_number' >SHOP:</label>
+                {choiceShopForStaff}<br/>
+            </div>                
 
             <button className='submit-formbtn  jigjog' type='submit'>Create</button>
             <button className=' jigjog' onClick={(e) => {

@@ -2,6 +2,8 @@
     text-align: left;
     width: 40%;
     margin: 10% auto 10px;
+    padding-bottom: 100px;
+    
 }
 
 .row-form{
@@ -9,7 +11,13 @@
 }
 
 .newbag-label{
-    margin-right: 60px;
+    font-weight: bolder;
+}
+
+.input-x{
+    width: 40%;
+    margin-right: 20%;
+    float: right;
 }
 
 .jigjog{
@@ -18,5 +26,6 @@
 }
 
 .submit-formbtn{
-    margin-right: 25%;
+    margin-right: 10%;
+    clear: both;
 }

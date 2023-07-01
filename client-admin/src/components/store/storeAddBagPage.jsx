@@ -81,20 +81,22 @@ function StoreAddBagPage(){
 
 
     return (
+
         <div className='newbag-form'>
+        <h2 style={{textAlign:"center"}}>ADD BAG</h2>
             <form onSubmit={handleSubmit}>
                 <div className='row-form'>
-               <label className='newbag-label' htmlFor='name'>NAME</label>
+               <label className='newbag-label' htmlFor='name'>NAME:</label>
                <input type="text" required name="name" onChange={handleChange} value={newBag.name}/> <br/>    
                </div>
                <div className='row-form'>
-               <label className='newbag-label' htmlFor='category'>CATEGORY</label>    
+               <label className='newbag-label' htmlFor='category'>CATEGORY:</label>    
                 <select name='category_id' onChange={handleChange}>
                     {categoryOptions}
                 </select> <br/>
                 </div>
                 <div className='row-form'>
-               <label className='newbag-label' htmlFor='image'>IMAGE</label> <input
+               <label className='newbag-label' htmlFor='image'>IMAGE:</label> <input
 				type="file"
 				accept="image/png, image/jpeg"
 				onChange={handleImageChange}
@@ -102,7 +104,7 @@ function StoreAddBagPage(){
 				required
 			    />
                 </div>
-                <button className='submit-formbtn jigjog' type='submit'>Create</button>
+                <button className='submit-formbtnr jigjog' type='submit'>Create</button>
                 <button className='jigjog' onClick={() => takeToCreateBagOrNotToCreate('/store')}>Cancel</button>
                 
             </form>
