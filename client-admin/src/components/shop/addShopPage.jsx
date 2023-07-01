@@ -46,7 +46,7 @@ function AddShopPage(){
             <form className="addshop-form" onSubmit={handleSubmit}>
             <h2>ADD SHOP</h2>
                 <label htmlFor='name' className='label-name'>NAME:</label>
-                <input className='input-name' type="text" name="name" value={newShop.name} onChange={handleChange} /><br/><br/>
+                <input required className='input-name' type="text" name="name" value={newShop.name} onChange={handleChange} /><br/><br/>
                 <button className="btn-floater" type='submit' > Create </button>
                 <button className="btn-floater" onClick={(e) => {
                     e.preventDefault();

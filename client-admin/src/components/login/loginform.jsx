@@ -43,6 +43,7 @@ function LogInForm(){
     };
 
 return(
+    <div className='login-bigboy'>
     <div className="login-page">
     <div className="signup-card login-top">
       <h1>LOGIN</h1>
@@ -61,7 +62,7 @@ return(
     </form>
     </div>
     </div>
-
+    </div>
 
     )
 }
