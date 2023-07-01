@@ -1,0 +1,26 @@
+.addshop-form{
+    width: 30%;
+    margin: 30px auto;
+    border-radius: 12px;
+    border: thin solid gray;
+    padding: 20px 20px 40px 20px;
+}
+
+.addshop-form > h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-floater{
+    float: right;
+}
+
+.input-name{
+    width: 60%;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+.label-name{
+    margin-left: 30px;
+}

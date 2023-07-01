@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import './addShopPageStyle.css'
 
 function AddShopPage(){
 
@@ -42,15 +43,15 @@ function AddShopPage(){
 
     return (
         <div>
+            <form className="addshop-form" onSubmit={handleSubmit}>
             <h2>ADD SHOP</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>NAME</label>
-                <input type="text" name="name" value={newShop.name} onChange={handleChange} /><br/><br/>
-                <button onClick={(e) => {
+                <label htmlFor='name' className='label-name'>NAME:</label>
+                <input className='input-name' type="text" name="name" value={newShop.name} onChange={handleChange} /><br/><br/>
+                <button className="btn-floater" type='submit' > Create </button>
+                <button className="btn-floater" onClick={(e) => {
                     e.preventDefault();
                     takeToCreateShopOrNotToCreate('/shops')
                 }}>Cancel</button>
-                   <button type='submit' >   CREATE </button>
             </form>
         </div>
     )

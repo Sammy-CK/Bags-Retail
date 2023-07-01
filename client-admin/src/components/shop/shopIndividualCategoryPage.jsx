@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom';
+import './shopIndividualCategoryPageStyle.css'
 
 function ShopIndividualCategoryPage(){
 
@@ -50,7 +51,7 @@ function ShopIndividualCategoryPage(){
 
     let shownCategoryBags = categoryBags.map(categoryBag => {
         return(
-        <li key={categoryBag.id}><p>name: {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> </li>
+        <li className="bags-lis" key={categoryBag.id}><p className="bags-name">name: {categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/> </li>
         )
     })
     
@@ -59,8 +60,8 @@ function ShopIndividualCategoryPage(){
         <div>
             <h2>{shopName}</h2>
             <h3>{categoryName}</h3>
-            <p>TOTAL: {categoryBags.length}</p>
-            <ul>
+            <p className='total-individual'>TOTAL: {categoryBags.length}</p>
+            <ul className='bags-ul'>
             {shownCategoryBags}
             </ul>
         </div>

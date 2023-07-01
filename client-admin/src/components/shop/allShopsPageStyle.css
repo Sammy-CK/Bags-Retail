@@ -1,9 +1,9 @@
-.addstaff-btn{
+.addshop-btn{
     float: right;
 }
 
-.staffs-ul{
-    width: 100%;
+.allshop-ul{
+    clear: both;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -11,25 +11,19 @@
     align-items: start;
 }
 
-.staffs-li{
+.allshop-li{
     list-style: none;
     border: thin gray solid;
     min-width: 80%;
     text-align: center;
     margin: 10px auto;
     border-radius: 12px;
+    padding: 5px;
 }
 
-.staffs-li > p{
-    float: left;
-    width: 33%;
-    text-align: center;
-
-}
-
-.cover{
+.title-ul{
     border: none;
-    border-bottom: solid thin black;
+    border-bottom: thin solid black;
     border-radius: 0px;
     font-weight: bolder;
 }

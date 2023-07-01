@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import './allShopsPageStyle.css'
 
 function AllShopsPage(){
 
@@ -32,16 +33,17 @@ function AllShopsPage(){
 
         let shownShops = shops.filter(shop => shop.id !== 1).map(shop => {
             return (
-                <li key={shop.id} onClick={() => takeShop(`/shops/${shop.id}`)}><p>{shop.name}</p> <p>TOTAL: {shop.bags.length}</p></li>
+                <li className='allshop-li' key={shop.id} onClick={() => takeShop(`/shops/${shop.id}`)}><p style={{float:"left", paddingLeft:"10px"}}>{shop.name}</p> <p style={{float:"right", paddingRight:"27px"}}>{shop.bags.length}</p></li>
             )
         })
 
     return(
         <div>
             <h2>SHOPS</h2>
-            <button onClick={() => takeShop('/shops/new')}>ADD SHOP</button>
+            <button className='addshop-btn' onClick={() => takeShop('/shops/new')}>ADD SHOP</button>
 
-            <ul>
+            <ul className='allshop-ul'>
+            <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>SHOP</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>
                 {shownShops}
             </ul>
         </div>

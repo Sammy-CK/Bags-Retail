@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import './shopCategoryPageStyle.css'
 
 
 function ShopCategoryPage(){
@@ -57,10 +58,10 @@ function ShopCategoryPage(){
      let currentlyShopBags = category.bags.filter(bag => (bag.secret_shop_key === +shopID && bag.sold == false) )
     //  console.log(currentlyShopBags)
         return(
-            <li key={category.id} onClick={() => {
+            <li className="category-li" key={category.id} onClick={() => {
                 takeCategory(`/shops/${shopID}/categories/${category.id}`)
                 }}>
-                <p>{currentlyShopBags.length}</p><p>{category.name}</p>
+                <p style={{float:"left", paddingLeft:"10px"}}>{category.name}</p><p style={{float:"right", paddingRight:"27px"}}>{currentlyShopBags.length}</p>
             </li>
         )
     })
@@ -70,7 +71,8 @@ function ShopCategoryPage(){
         <h2>{shopName}</h2>
         <p>TOTAL: {shopBags.length}</p>
         <h3>CATEGORIES</h3>
-        <ul>
+        <ul className="category-ul" >
+        <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>CATEGORY</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>
             {categoryBox}
         </ul>
 

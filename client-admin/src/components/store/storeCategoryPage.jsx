@@ -56,7 +56,7 @@ function StoreCategoryPage(){
             <li className="category-li" key={category.id} onClick={() => {
                 takeCategory(`/store/category/${category.id}`)
                 }}>
-                <p><span style={{float:"left", paddingLeft:"10px"}}>{category.name}</span> <span style={{float:"right", paddingRight:"10px"}}>{currentlyStoredBags.length}</span></p>
+                <p><span style={{float:"left", paddingLeft:"10px"}}>{category.name}</span> <span style={{float:"right", paddingRight:"27px"}}>{currentlyStoredBags.length}</span></p>
             </li>
         )
     })
@@ -71,6 +71,7 @@ function StoreCategoryPage(){
 
         <h3>CATEGORIES</h3>
         <ul className="category-ul" >
+        <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>CATEGORY</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>
             {categoryBox}
         </ul>
 
