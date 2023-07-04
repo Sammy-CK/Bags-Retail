@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './allStaffPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function AllStaffPage(){
 
@@ -38,6 +39,7 @@ function AllStaffPage(){
 
     return (
         <div>
+            <NavBar/>
             <h2 >STAFF</h2><hr/>
             <button className="addstaff-btn" onClick={() => takeStaff('/staffs/new')}>ADD STAFF</button>
             <ul className="staffs-ul">

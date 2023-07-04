@@ -16,14 +16,14 @@ import AddStaffPage from './components/staff/addStaffPage';
 import AddCategoryPage from './components/category/addCategoryPage';
 import SalesPage from './components/sale/salesPage';
 import NavBar from './components/navbar/navBar';
-
+import ShopSaleConfirm from './components/shop/shopSaleConfrim'
 
 
 
 function App() {
   return (
       <div className='site-div'>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
     <Route path='/' element={< LogInForm />} />
     <Route path='/store' element={< StoreCategoryPage />} />
@@ -39,6 +39,8 @@ function App() {
     <Route path='/staffs/new' element={< AddStaffPage />} />
     <Route path='/categories/new' element={< AddCategoryPage />} />
     <Route path='/sales' element={< SalesPage />} />
+    <Route path='/shops/:shopID/categories/:categoryID/bags/:bagID/confirm' exact element={< ShopSaleConfirm />} />
+
 
         </Routes>
       </div>

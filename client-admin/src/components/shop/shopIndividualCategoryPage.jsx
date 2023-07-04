@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom';
 import './shopIndividualCategoryPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function ShopIndividualCategoryPage(){
 
@@ -10,8 +11,16 @@ function ShopIndividualCategoryPage(){
     let [categoryBags, setCategoryBags] = useState([])
     let [categoryName, setCategoryName] = useState("");
     const [shopName, setShopName] = useState("")
+    let takeConfirmPage = useNavigate()
+    let role = useSelector((state) => state.staff.staff.staff.role)
+    let [decider, setDecider] = useState({});
 
+
+console.log(decider)
     useEffect(() => {
+
+        setDecider((role === "admin") ? {display:"none"} : console.log("goat")) 
+        // console.log(decider)
         // Fetching category's bags
         fetch(`https://bags-o7py.onrender.com/categories/${categoryID}`, {
             method: "GET",
@@ -47,17 +56,32 @@ function ShopIndividualCategoryPage(){
                     }
                 })
 
+
     }, [])
+
 
     let shownCategoryBags = categoryBags.map(categoryBag => {
         return(
-        <li className="bags-lis" key={categoryBag.id}><p className="bags-name">name: {categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/> </li>
+        <li className="bags-lis" key={categoryBag.id}><p className="bags-name">name: {categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/>
+            <button
+            style={ decider }
+          className="bags-btn"
+          onClick={() => {
+            takeConfirmPage(
+              `/shops/${shopID}/categories/${categoryID}/bags/${categoryBag.id}/confirm`
+            );
+          }}
+        >
+          SELL
+            </button>
+             </li>
         )
     })
     
     return(
 
         <div>
+            < NavBar/>
             <h2>{shopName}</h2>
             <h3>{categoryName}</h3>
             <p className='total-individual'>TOTAL: {categoryBags.length}</p>

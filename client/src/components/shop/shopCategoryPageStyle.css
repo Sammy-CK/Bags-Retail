@@ -1,0 +1,59 @@
+.total-div{
+    width: 40%;
+    text-align: right;
+    float: right;
+    margin: 0px 140px;
+    padding: 0px 10px;
+
+}
+
+.store-div{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.add-btn{
+    margin-left: 10px;
+}
+
+h3{
+    text-align: center;
+    width: 20%;
+    margin: 10px auto;
+}
+.category-li{
+    list-style: none;
+    border: thin gray solid;
+    min-width: 80%;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.category-ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: start;
+    clear: both;
+}
+
+.allshop-li{
+    list-style: none;
+    border: thin gray solid;
+    min-width: 80%;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.title-ul{
+    border: none;
+    border-bottom: thin solid black;
+    border-radius: 0px;
+    font-weight: bolder;
+}

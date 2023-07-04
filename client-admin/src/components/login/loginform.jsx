@@ -31,8 +31,14 @@ function LogInForm(){
             if (resp.ok){
                 return resp.json().then(data => {
                     dispatch(storeStaffDetails(data))
-                    console.log(staff)
-                    takeStore('/store')   
+                    console.log(data)
+                    let role = data.staff.role
+                    let shop = data.staff.shop.id
+                    if(role == "admin"){
+                        takeStore('/store')   
+                    }else{
+                        takeStore(`/shops/${shop}`)   
+                    }
                     setLogInDetails({name: "", password: ""})
                 })
             }else{

@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './addStaffPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function AddStaffPage(){
 
@@ -89,6 +90,8 @@ function AddStaffPage(){
         })
 
     return (
+        <div>
+        <NavBar/>
         <div className='newbag-form'>
             <form onSubmit={handleSubmit}>
             <div className='row-form'>
@@ -116,6 +119,7 @@ function AddStaffPage(){
 
             </form>
 
+        </div>
         </div>
     )
 }

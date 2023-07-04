@@ -2,8 +2,7 @@ import { React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { storeStaffDetails } from '../../redux/staffSlice'
 import { useNavigate } from 'react-router-dom'
-
-
+import './logInPageStyle.css'
 
 function LogInPage(){
     const takeStore = useNavigate();
@@ -40,17 +39,26 @@ function LogInPage(){
     };
 
 return(
-    <form onSubmit={handleSubmit} >
-        <div>
+    <div className='login-bigboy'>
+    <div className="login-page">
+    <div className="signup-card login-top">
+    <h1>LOGIN</h1>
+    <form onSubmit={handleSubmit} className='login-form'>
+        <div className="txt_field">
             <h3>USERNAME</h3>
-            <input type='text' name="name" onChange={handleChange} value={logInDetails.name}/>
+            <input type='text'className='login-input' required name="name" onChange={handleChange} value={logInDetails.name}/>
         </div>
-        <div>
+        <div className="txt_field">
             <h3>PASSWORD</h3>
-            <input type='password' name="password" onChange={handleChange} value={logInDetails.password} />
+            <input type='password' className='login-input' required name="password" onChange={handleChange} value={logInDetails.password} />
         </div>
-        <input type='submit' value="LOGIN" />
+        <div className="buttons">
+        <input type='submit' className='login-btn' value="LOGIN" />
+        </div>
     </form>
+    </div>
+    </div>
+    </div>
     )
 }
 

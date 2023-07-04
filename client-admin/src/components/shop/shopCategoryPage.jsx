@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './shopCategoryPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 
 function ShopCategoryPage(){
@@ -68,6 +69,7 @@ function ShopCategoryPage(){
 
     return(
         <div>
+        <NavBar />
         <h2>{shopName}</h2>
         <p>TOTAL: {shopBags.length}</p>
         <h3>CATEGORIES</h3>

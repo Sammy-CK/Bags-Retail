@@ -14,7 +14,7 @@
 .bags-li{
     list-style: none;
     border: thin gray solid;
-    min-width: 200px;
+    min-width: 270px;
     min-height: 200px;
     text-align: center;
     margin: 10px;
@@ -29,7 +29,10 @@
 .bags-btn{
     margin-right: 10%;
     margin-top: 20px;
-    /* display: none; */
+    display: block;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bags-img{

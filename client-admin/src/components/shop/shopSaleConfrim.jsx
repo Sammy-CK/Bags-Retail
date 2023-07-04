@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom';
 import './shopSaleConfirmStyle.css'
+import NavBar from '../navbar/navBar';
 
 function ShopSaleConfirm(){
 
@@ -66,6 +67,7 @@ function ShopSaleConfirm(){
     return(
 
         <div>
+            <NavBar/>
         <li key={categoryBag.id}><p> {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> 
         <p>Confirm Price of Sale</p>
         <form>

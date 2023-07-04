@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import './storeAddBagPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function StoreAddBagPage(){
 
@@ -81,7 +82,8 @@ function StoreAddBagPage(){
 
 
     return (
-
+        <div>
+            <NavBar/>
         <div className='newbag-form'>
         <h2 style={{textAlign:"center"}}>ADD BAG</h2>
             <form onSubmit={handleSubmit}>
@@ -109,6 +111,7 @@ function StoreAddBagPage(){
                 
             </form>
 
+        </div>
         </div>
     )
 }

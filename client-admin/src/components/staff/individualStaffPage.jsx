@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './individualStaffPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function IndividualStaffPage(){
 
@@ -56,6 +57,7 @@ useEffect(() => {
 
     return(
         <>
+            <NavBar/>
             <h2>{staff.name}</h2>
             <div className='indstaff-div'>
             <div className='indStaff-p'><h4>NAME:</h4> <p>{staff.name}</p></div>

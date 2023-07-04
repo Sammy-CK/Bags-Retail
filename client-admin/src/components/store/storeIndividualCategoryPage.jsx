@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom';
 import './storeIndividualCategoryPageStyle.css'
+import NavBar from '../navbar/navBar';
 
 function StoreIndividualCategoryPage(){
     const takeCategoryBag = useNavigate();
@@ -40,6 +41,7 @@ function StoreIndividualCategoryPage(){
     return(
 
         <div>
+            <NavBar/>
             <h2>STORE</h2>
             <h3>{categoryName}</h3>
             <p className='total-individual'>TOTAL: {categoryBags.length}</p>

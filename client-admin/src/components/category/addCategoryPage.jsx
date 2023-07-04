@@ -1,6 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import NavBar from '../navbar/navBar';
+
 
 function AddCategoryPage(){
 
@@ -45,6 +47,7 @@ function AddCategoryPage(){
 
     return (
         <div>
+            <NavBar />
             <form>
             <label htmlFor='name' >NAME</label>
                 <input type='text' name='name' value={newCategory.name} onChange={handleChange} /><br/>

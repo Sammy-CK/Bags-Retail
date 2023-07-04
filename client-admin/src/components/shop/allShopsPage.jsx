@@ -2,6 +2,8 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import './allShopsPageStyle.css'
+import NavBar from '../navbar/navBar';
+
 
 function AllShopsPage(){
 
@@ -39,6 +41,7 @@ function AllShopsPage(){
 
     return(
         <div>
+            <NavBar />
             <h2>SHOPS</h2>
             <button className='addshop-btn' onClick={() => takeShop('/shops/new')}>ADD SHOP</button>
 

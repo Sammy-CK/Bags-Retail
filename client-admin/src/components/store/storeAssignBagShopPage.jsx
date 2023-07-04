@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import './storeAssignBagShopPageStyle.css'
-
+import NavBar from '../navbar/navBar';
 
 function StoreAssignBagShopPage(){
 
@@ -86,6 +86,8 @@ function StoreAssignBagShopPage(){
 
 
     return(
+        <div>
+            <NavBar/>
         <div className='choice-div'>
             <h3>CHOOSE SHOP</h3>
             <form className='assign-form'>
@@ -97,6 +99,7 @@ function StoreAssignBagShopPage(){
             <button onClick={handleSubmit}>Confirm</button>
             </form>
 
+        </div>
         </div>
     )
 }

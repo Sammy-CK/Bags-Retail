@@ -2,6 +2,8 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import './addShopPageStyle.css'
+import NavBar from '../navbar/navBar';
+
 
 function AddShopPage(){
 
@@ -43,6 +45,7 @@ function AddShopPage(){
 
     return (
         <div>
+            <NavBar />
             <form className="addshop-form" onSubmit={handleSubmit}>
             <h2>ADD SHOP</h2>
                 <label htmlFor='name' className='label-name'>NAME:</label>
