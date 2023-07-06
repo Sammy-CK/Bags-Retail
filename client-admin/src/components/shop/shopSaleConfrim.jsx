@@ -37,8 +37,11 @@ function ShopSaleConfirm(){
                             e.preventDefault()
                             if (sellPrice){
                                 let now = new Date();
-                                let date = `${now.getDate()} - ${now.getMonth() + 1} - ${now.getFullYear()}`
-                            
+                                let year = now.getFullYear();
+                                let month = (now.getMonth() + 1).toString().padStart(2, '0');
+                                let day = now.getDate().toString().padStart(2, '0');
+                                let date = `${year}-${month}-${day}`;
+                                console.log(date); // e.g. "2022-09-12"
                             //Fetching sell details for bag
                             fetch(`https://bags-o7py.onrender.com/bags/${bagID}`, {
                                 method: "PATCH",
