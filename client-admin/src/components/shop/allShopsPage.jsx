@@ -34,8 +34,9 @@ function AllShopsPage(){
     }, [])
 
         let shownShops = shops.filter(shop => shop.id !== 1).map(shop => {
+            let notSoldBages = shop.bags.filter( bag => (bag.sold === false) )
             return (
-                <li className='allshop-li' key={shop.id} onClick={() => takeShop(`/shops/${shop.id}`)}><p style={{float:"left", paddingLeft:"10px"}}>{shop.name}</p> <p style={{float:"right", paddingRight:"27px"}}>{shop.bags.length}</p></li>
+                <li className='allshop-li' key={shop.id} onClick={() => takeShop(`/shops/${shop.id}`)}><p style={{float:"left", paddingLeft:"10px"}}>{shop.name}</p> <p style={{float:"right", paddingRight:"27px"}}>{notSoldBages.length}</p></li>
             )
         })
 

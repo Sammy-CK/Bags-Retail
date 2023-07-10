@@ -70,9 +70,11 @@ function ShopSaleConfirm(){
     return(
 
         <div>
-            <NavBar/>
-        <li key={categoryBag.id}><p> {categoryBag.name}</p> <img src={categoryBag.image_url} width="100px" height="100px"/> 
-        <p>Confirm Price of Sale</p>
+            <ul className='confirm-ul'>
+        <li className="confirm-li" key={categoryBag.id}>
+            <p className="confirm-name"> {categoryBag.name}</p> <img className="confirm-img" src={categoryBag.image_url} width="240px" height="240px"/> 
+        <div className='sale-div'>
+        <p style={{paddingBottom:"20px"}}>Confirm Price of Sale</p>
         <form>
             <label htmlFor='price'>PRICE:</label>
             <input type='number' name='price' value={sellPrice} onChange={(e) =>  setSellPrice(e.target.value)} />
@@ -83,7 +85,9 @@ function ShopSaleConfirm(){
             <button type='submit' onClick={handleSubmit}>Confirm</button>
 
         </form>
+        </div>
         </li>
+        </ul>
         </div>
 
         
