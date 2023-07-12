@@ -39,3 +39,30 @@ h3{
     justify-content:flex-start;
     align-items: start;
 }
+
+@media screen and (max-width: 480px) {
+    .add-btn{
+        margin-left: 10px;
+    }
+
+    .total-div{
+        width: 50%;
+        text-align: right;
+        float: right;
+        margin: 0px;
+        padding: 0px 10px;
+    
+    }
+
+    .category-ul{
+        padding-left: 0px;
+    }
+
+    .category-h3{
+        text-align: center;
+        width: 30%;
+        margin: 10px auto;
+        padding-top: 20px;
+    }
+
+  }

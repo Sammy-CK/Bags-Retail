@@ -19,8 +19,28 @@
     width: 60%;
     margin-left: 30px;
     margin-bottom: 40px;
+    border: thin black solid;
 }
 
 .label-name{
     margin-left: 30px;
 }
+
+@media screen and (max-width: 480px) {
+    .addshop-form{
+        width: 70%;
+        margin-top: 25%;
+    }
+
+    .input-name{
+        width: 60%;
+        margin-left: 30px;
+        margin-bottom: 40px;
+    }
+
+    .label-name{
+        margin-left: 10px;
+    }
+    
+
+  }

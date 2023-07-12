@@ -69,7 +69,7 @@ console.log(decider)
           onClick={() => {
             takeConfirmPage(
               `/shops/${shopID}/categories/${categoryID}/bags/${categoryBag.id}/confirm`
-            );
+            ); 
           }}
         >
           SELL

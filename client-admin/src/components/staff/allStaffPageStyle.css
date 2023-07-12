@@ -33,3 +33,9 @@
     border-radius: 0px;
     font-weight: bolder;
 }
+
+@media screen and (max-width: 600px) {
+    .staffs-ul {
+        padding-left: 0px;
+    }
+}

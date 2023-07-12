@@ -92,7 +92,7 @@ function AddStaffPage(){
     return (
         <div>
         <NavBar/>
-        <div className='newbag-form'>
+        <div className='newbag-formD'>
             <form onSubmit={handleSubmit}>
             <div className='row-form'>
                 <label className='newbag-label' htmlFor='name' >NAME:</label>
@@ -103,7 +103,7 @@ function AddStaffPage(){
                 <input type='password' className='input-x' required name='password' value={newStaff.password} onChange={handleChange} /><br/>
             </div>
             <div className='row-form'>
-                <label className='newbag-label' htmlFor='phone_number' >PHONE NUMBER:</label>
+                <label className='newbag-label' htmlFor='phone_number' >PHONE:</label>
                 <input type='text' className='input-x' name='phone_number' required value={newStaff.phone_number} onChange={handleChange} /><br/>
             </div>
             <div className='row-form'>

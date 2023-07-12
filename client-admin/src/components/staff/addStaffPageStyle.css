@@ -1,4 +1,4 @@
-.newbag-form{
+.newbag-formD{
     text-align: left;
     width: 40%;
     margin: 10% auto 10px;
@@ -29,3 +29,21 @@
     margin-right: 10%;
     clear: both;
 }
+
+@media screen and (max-width: 480px) {
+    
+    .newbag-formD{
+        text-align: left;
+        width: 90%;
+        margin:  10px auto;
+        border: thin solid gray;
+        padding: 15px 0px 120px 10px;
+        border-radius: 12px;
+        margin-top: 30%;
+    }
+
+    .newbag-label{
+        margin-right: 40px;
+    }
+
+  }

@@ -1,6 +1,6 @@
-.newbag-form{
+.newbag-formA{
     text-align: left;
-    width: 30%;
+    width: 70%;
     margin:  10px auto;
     border: thin solid gray;
     padding: 15px 0px 50px 10px;
@@ -23,3 +23,20 @@
 .submit-formbtnr{
     margin-right: 30px;
 }
+
+@media screen and (max-width: 480px) {
+    
+    .newbag-formA{
+        text-align: left;
+        width: 90%;
+        margin:  10px auto;
+        border: thin solid gray;
+        padding: 15px 0px 50px 10px;
+        border-radius: 12px;
+    }
+
+    .newbag-label{
+        margin-right: 20px;
+    }
+
+  }

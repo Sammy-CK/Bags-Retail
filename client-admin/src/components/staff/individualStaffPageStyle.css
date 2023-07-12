@@ -36,3 +36,12 @@
 .btn-12{
     float: right;
 }
+
+@media screen and (max-width: 480px) {
+    
+    .indstaff-div{
+        width: 75%;
+        margin-top: 30%;
+    }
+
+  }

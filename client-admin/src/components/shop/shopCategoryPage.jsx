@@ -70,9 +70,9 @@ function ShopCategoryPage(){
     return(
         <div>
         <NavBar />
-        <h2>{shopName}</h2>
-        <p>TOTAL: {shopBags.length}</p>
-        <h3>CATEGORIES</h3>
+        <h2 style={{float:"left", paddingLeft:"10px"}}>{shopName}</h2>
+        <p style={{float:"right", paddingRight:"10px"}}>TOTAL: {shopBags.length}</p>
+        <h3 style={{clear:"both"}} className='category-h3'>CATEGORIES</h3>
         <ul className="category-ul" >
         <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>CATEGORY</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>
             {categoryBox}

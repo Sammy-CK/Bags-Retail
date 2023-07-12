@@ -74,11 +74,11 @@ function ShopSaleConfirm(){
         <li className="confirm-li" key={categoryBag.id}>
             <p className="confirm-name"> {categoryBag.name}</p> <img className="confirm-img" src={categoryBag.image_url} width="240px" height="240px"/> 
         <div className='sale-div'>
-        <p style={{paddingBottom:"20px"}}>Confirm Price of Sale</p>
+        <p className="confirm-p" >Confirm Price of Sale</p>
         <form>
-            <label htmlFor='price'>PRICE:</label>
-            <input type='number' name='price' value={sellPrice} onChange={(e) =>  setSellPrice(e.target.value)} />
-            <button type='submit' onClick={(e) => {
+            <label className='price-label' htmlFor='price'>PRICE:</label>
+            <input className='price-input' type='number' name='price' value={sellPrice} onChange={(e) =>  setSellPrice(e.target.value)} />
+            <button className='price-btn' type='submit' onClick={(e) => {
                 e.preventDefault();
                 takeConfirmPage(`/shops/${shopID}`)
                 }}>Cancel</button>

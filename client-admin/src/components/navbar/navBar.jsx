@@ -16,10 +16,10 @@ function NavBar(){
 
     return(
         <div className='navbar-ul' style={ decider }>
-        <h2 onClick={() => takePage('/store')}>STORE</h2>
-        <h2 onClick={() => takePage('/shops')}>SHOPS</h2>
-        <h2 onClick={() => takePage('/staffs')}>STAFF</h2>
-        <h2 onClick={() => takePage('/sales')}>SALES</h2>
+        <h2 className='mutia' onClick={() => takePage('/store')}>STORE</h2>
+        <h2 className='mutia' onClick={() => takePage('/shops')}>SHOPS</h2>
+        <h2 className='mutia' onClick={() => takePage('/staffs')}>STAFF</h2>
+        <h2 className='mutia' onClick={() => takePage('/sales')}>SALES</h2>
         </div>
     )
 }
