@@ -14,6 +14,8 @@ function ShopIndividualCategoryPage(){
     let takeConfirmPage = useNavigate()
     let role = useSelector((state) => state.staff.staff.staff.role)
     let [decider, setDecider] = useState({});
+    let [currSearchValue, setCurrSearchValue] = useState("")
+    let [filteredBags, setFilteredBags] = useState([])
 
 
 console.log(decider)
@@ -33,6 +35,7 @@ console.log(decider)
                     console.log(data)
                     setCategoryName(data.name);
                     setCategoryBags(data.bags.filter(bag => (bag.secret_shop_key === +shopID && bag.sold == false) ));
+                    setFilteredBags(data.bags.filter(bag => (bag.secret_shop_key === +shopID && bag.sold == false) ));
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")
@@ -60,7 +63,7 @@ console.log(decider)
     }, [])
 
 
-    let shownCategoryBags = categoryBags.map(categoryBag => {
+    let shownCategoryBags = filteredBags.map(categoryBag => {
         return(
         <li className="bags-lis" key={categoryBag.id}><p className="bags-name">name: {categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/>
             <button
@@ -78,6 +81,11 @@ console.log(decider)
         )
     })
     
+    const handleSearch = (e) => {
+        setCurrSearchValue(e.target.value)
+        setFilteredBags(categoryBags.filter(bag => (bag.name.toLowerCase().includes((e.target.value).toLowerCase()))))
+    }
+
     return(
 
         <div>
@@ -85,6 +93,9 @@ console.log(decider)
             <h2>{shopName}</h2>
             <h3>{categoryName}</h3>
             <p className='total-individual'>TOTAL: {categoryBags.length}</p>
+            <form>
+                <input type='search' value={currSearchValue} onChange={handleSearch}/>
+            </form>
             <ul className='bags-ul'>
             {shownCategoryBags}
             </ul>

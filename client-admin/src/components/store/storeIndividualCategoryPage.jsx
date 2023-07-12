@@ -11,6 +11,8 @@ function StoreIndividualCategoryPage(){
     let token = useSelector((state) => state.staff.staff.jwt)
     let [categoryBags, setCategoryBags] = useState([])
     let [categoryName, setCategoryName] = useState("");
+    let [currSearchValue, setCurrSearchValue] = useState("")
+    let [filteredBags, setFilteredBags] = useState([])
     useEffect(() => {
         // Fetching category's bags
         fetch(`https://bags-o7py.onrender.com/categories/${categoryID}`, {
@@ -24,6 +26,7 @@ function StoreIndividualCategoryPage(){
                     console.log(data)
                     setCategoryName(data.name);
                     setCategoryBags(data.bags.filter(bag => bag.secret_shop_key === 1));
+                    setFilteredBags(data.bags.filter(bag => bag.secret_shop_key === 1))
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")
@@ -32,11 +35,18 @@ function StoreIndividualCategoryPage(){
 
     }, [])
 
-    let shownCategoryBags = categoryBags.map(categoryBag => {
+
+
+    let shownCategoryBags = filteredBags.map(categoryBag => {
         return(
         <li className="bags-li" key={categoryBag.id}><p className="bags-name">{categoryBag.name}</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/> <button className="bags-btn" onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
         )
     })
+
+    const handleSearch = (e) => {
+        setCurrSearchValue(e.target.value)
+        setFilteredBags(categoryBags.filter(bag => (bag.name.toLowerCase().includes((e.target.value).toLowerCase()))))
+    }
     
     return(
 
@@ -45,6 +55,9 @@ function StoreIndividualCategoryPage(){
             <h2>STORE</h2>
             <h3>{categoryName}</h3>
             <p className='total-individual'>TOTAL: {categoryBags.length}</p>
+            <form>
+                <input type='search' value={currSearchValue} onChange={handleSearch}/>
+            </form>
             <ul className='bags-ul'>
             {shownCategoryBags}
             </ul>
