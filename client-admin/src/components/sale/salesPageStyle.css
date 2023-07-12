@@ -1,7 +1,7 @@
 .sales-li{
     list-style: none;
     border-bottom: thin gray solid;
-    min-width: 80%;
+    min-width: 100%;
     text-align: center;
     margin: 10px auto;
     /* border-radius: 12px; */
@@ -9,7 +9,7 @@
 
 .sales-li > p{
     float: left;
-    width: 23%;
+    width: 20%;
     text-align: center;
     padding-top: 16px;
 

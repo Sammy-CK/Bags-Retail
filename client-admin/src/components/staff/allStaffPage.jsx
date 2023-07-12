@@ -22,7 +22,7 @@ function AllStaffPage(){
             if (resp.ok){
                 return resp.json().then(data => {
                     console.log(data)
-                    setStaffs(data)
+                    setStaffs(data.filter(staffer => (staffer.id !== 1)))
                 })
             }else{
                 console.log("Thats CAP LIL'NIGGA")

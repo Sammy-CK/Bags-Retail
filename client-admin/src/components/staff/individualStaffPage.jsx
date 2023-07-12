@@ -40,17 +40,9 @@ useEffect(() => {
 				Authorization: `Bearer ${token}`
             		 }
                 }).then(resp => {           
-                    if (resp.ok){
-                        return resp.json().then(data => {
-                            console.log(data)
                             alert('Deleted Successfully!')
                             takeStaffs('/staffs')
                             })
-                    }else{
-                        console.log("Thats CAP LIL'NIGGA")
-                    }
-                })
-
     }
 
 
