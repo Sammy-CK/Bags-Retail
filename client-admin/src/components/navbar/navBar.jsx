@@ -15,12 +15,12 @@ function NavBar(){
 
 
     return(
-        <div className='navbar-ul' style={ decider }>
-        <h2 className='mutia' onClick={() => takePage('/store')}>STORE</h2>
-        <h2 className='mutia' onClick={() => takePage('/shops')}>SHOPS</h2>
-        <h2 className='mutia' onClick={() => takePage('/staffs')}>STAFF</h2>
-        <h2 className='mutia' onClick={() => takePage('/sales')}>SALES</h2>
-        </div>
+        <ul className='navbar-ul' style={ decider }>
+        <li className='mutia' onClick={() => takePage('/store')}>STORE</li>
+        <li className='mutia' onClick={() => takePage('/shops')}>SHOPS</li>
+        <li className='mutia' onClick={() => takePage('/staffs')}>STAFF</li>
+        <li className='mutia' onClick={() => takePage('/sales')}>SALES</li>
+        </ul>
     )
 }
 
