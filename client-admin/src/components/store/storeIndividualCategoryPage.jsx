@@ -55,8 +55,8 @@ function StoreIndividualCategoryPage(){
             <h2>STORE</h2>
             <h3>{categoryName}</h3>
             <p className='total-individual'>TOTAL: {categoryBags.length}</p>
-            <form>
-                <input type='search' value={currSearchValue} onChange={handleSearch}/>
+            <form className='search-form'>
+                <input className='search-input' placeholder="Search.." type='search' value={currSearchValue} onChange={handleSearch}/>
             </form>
             <ul className='bags-ul'>
             {shownCategoryBags}

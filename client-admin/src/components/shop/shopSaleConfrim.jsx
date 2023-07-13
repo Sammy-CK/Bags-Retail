@@ -49,7 +49,7 @@ function ShopSaleConfirm(){
                                     Authorization: `Bearer ${token}`,
                                     'Content-Type': 'application/json'
                                          },
-                                    body: JSON.stringify({price: +sellPrice, sold: true, sold_at: "2021-05-22"})
+                                    body: JSON.stringify({price: +sellPrice, sold: true, sold_at: date})
                                     }).then(resp => {           
                                 if (resp.ok){
                                     return resp.json().then(data => {

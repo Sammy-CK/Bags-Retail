@@ -65,9 +65,6 @@ function SalesPage() {
     return true;
   });
 
-filteredItems.reduce((acc, obj) => acc + obj.price, 0)
-
-
   const sortedItems = filteredItems.reduce((acc, item) => {
     const sold_at = item.sold_at.split("T")[0]; // remove time portion of sold_at string
     if (!acc[sold_at]) {
@@ -108,10 +105,10 @@ filteredItems.reduce((acc, obj) => acc + obj.price, 0)
   return (
     <div>
       <NavBar/>
-      <h3>TOTAL: {filteredItems.reduce((acc, obj) => acc + obj.price, 0)}</h3>
-      <form>
-        <input type="month" value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)} />
-        <select value={selectedShop} onChange={(e) => setSelectedShop(e.target.value)}>
+      <h3 style={{width:"70%"}}>TOTAL: {filteredItems.reduce((acc, obj) => acc + obj.price, 0)}</h3>
+      <form className="sales-form">
+        <input className="input-month" type="month" value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)} />
+        <select className="select-shop" value={selectedShop} onChange={(e) => setSelectedShop(e.target.value)}>
           <option value="">All Shops</option>
           {currShopOptions}
           {/* Add more options for other shops */}

@@ -29,3 +29,23 @@
     padding-bottom: 10px;
 
 }
+
+.input-month{
+margin-right: 10px;
+}
+
+
+.sales-form{
+   width: 90%;
+   text-align: right;
+   margin-right: 10%;
+}
+
+@media screen and (max-width: 480px) {
+    .sales-form{
+        width: 90%;
+        text-align: center;
+        margin-right: 10%;
+        padding-top: 20px;
+     }
+}
