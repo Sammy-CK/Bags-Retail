@@ -1,6 +1,7 @@
 .total-individual{
     text-align: right;
     padding: 10px;
+    margin-right: 6%;
 }
 
 .bags-ul{
@@ -63,4 +64,11 @@
         width: 40%;
 
     }
+
+    .total-individual{
+        text-align: right;
+        padding: 10px;
+        margin-right: 0%;
+    }
+
   }

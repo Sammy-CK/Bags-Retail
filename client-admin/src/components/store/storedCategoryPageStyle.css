@@ -40,6 +40,15 @@ h3{
     align-items: start;
 }
 
+.totalnadd-p{
+    width: 80%;
+}
+
+.store-h2{
+    width: 80%;
+    padding-left: 5%;
+}
+
 @media screen and (max-width: 480px) {
     .add-btn{
         margin-left: 10px;
@@ -63,6 +72,10 @@ h3{
         width: 30%;
         margin: 10px auto;
         padding-top: 20px;
+    }
+
+    .totalnadd-p{
+        width: 100%;
     }
 
   }

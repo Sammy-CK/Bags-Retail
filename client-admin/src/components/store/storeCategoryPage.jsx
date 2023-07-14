@@ -66,10 +66,10 @@ function StoreCategoryPage(){
             <NavBar/>
         <div className='store-div'>
         <div className='total-div'>
-        <p>TOTAL: {storedBags.length} <button className='add-btn' onClick={() => takeCategory('/store/new')}>ADD BAG</button></p>
+        <p className='totalnadd-p'>TOTAL: {storedBags.length} <button className='add-btn' onClick={() => takeCategory('/store/new')}>ADD BAG</button></p>
         </div>
         
-        <h2>STORE</h2>
+        <h2 className='store-h2'>STORE</h2>
 
         <h3 className='category-h3'>CATEGORIES</h3>
         <ul className="category-ul" >
