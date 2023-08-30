@@ -40,7 +40,11 @@ function ShopSaleConfirm(){
                                 let year = now.getFullYear();
                                 let month = (now.getMonth() + 1).toString().padStart(2, '0');
                                 let day = now.getDate().toString().padStart(2, '0');
-                                let date = `${year}-${month}-${day}`;
+                                let hours = now.getHours().toString().padStart(2, '0');
+                                let minutes = now.getMinutes().toString().padStart(2, '0');
+                                let seconds = now.getSeconds().toString().padStart(2, '0');
+                                let date = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+                                // let date = `${year}-${month}-${day}`;
                                 console.log(date); // e.g. "2022-09-12"
                             //Fetching sell details for bag
                             fetch(`https://bags-o7py.onrender.com/bags/${bagID}`, {

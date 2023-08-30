@@ -17,14 +17,13 @@ function ShopIndividualCategoryPage(){
     let [deciderAdmin, setDeciderAdmin] = useState({});
     let [currSearchValue, setCurrSearchValue] = useState("")
     let [filteredBags, setFilteredBags] = useState([])
+    let info = useSelector((state) => state.staff.staff.staff.shop.id)
 
-
-console.log(decider)
     useEffect(() => {
-        setDecider((role === "admin") ? {display:"none"} : console.log("goat")) 
+        setDecider((role === "admin" || +info !== +shopID ) ? {display:"none"} : console.log("goat")) 
         setDeciderAdmin((role !== "admin") ? {display:"none"} : console.log("goat")) 
 
-        // console.log(decider)
+        console.log(info)
         // Fetching category's bags
         fetch(`https://bags-o7py.onrender.com/categories/${categoryID}`, {
             method: "GET",

@@ -70,6 +70,7 @@ function ShopCategoryPage(){
     return(
         <div>
         <NavBar />
+        <button onClick={() => takeCategory('/shops')}>ALL SHOPS</button>
         <h2 style={{float:"left", paddingLeft:"10px"}}>{shopName}</h2>
         <p style={{float:"right", paddingRight:"10px"}}>TOTAL: {shopBags.length}</p>
         <h3 style={{clear:"both"}} className='category-h3'>CATEGORIES</h3>
