@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import NavBar from '../navbar/navBar';
+import './addCategoryPageStyle.css'
 
 
 function AddCategoryPage(){
@@ -22,6 +23,7 @@ function AddCategoryPage(){
         e.preventDefault();
 
             // Fetch creating category
+            console.log(newCategory.name);
             fetch(`https://bags-o7py.onrender.com/categories`, {
                 method: "POST",
                 headers: {
@@ -48,15 +50,16 @@ function AddCategoryPage(){
     return (
         <div>
             <NavBar />
-            <form>
+            <form className="addshop-form">
+                <h2>ADD CATEGORY</h2>
             <label htmlFor='name' >NAME</label>
-                <input type='text' name='name' value={newCategory.name} onChange={handleChange} /><br/>
-            
-                <button onClick={(e) => {
+                <input type='text' required className='input-name' name='name' value={newCategory.name} onChange={handleChange} /><br/>
+                <button className="btn-floater" onClick={ handleSubmit }>Create</button>
+
+                <button className="btn-floater" onClick={(e) => {
                 e.preventDefault()
                 takeCategory('/store')
                 } }>Back</button>
-            <button onClick={ handleSubmit }>Create</button>
             
             </form>
         </div>

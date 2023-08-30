@@ -14,14 +14,16 @@ function ShopIndividualCategoryPage(){
     let takeConfirmPage = useNavigate()
     let role = useSelector((state) => state.staff.staff.staff.role)
     let [decider, setDecider] = useState({});
+    let [deciderAdmin, setDeciderAdmin] = useState({});
     let [currSearchValue, setCurrSearchValue] = useState("")
     let [filteredBags, setFilteredBags] = useState([])
 
 
 console.log(decider)
     useEffect(() => {
-
         setDecider((role === "admin") ? {display:"none"} : console.log("goat")) 
+        setDeciderAdmin((role !== "admin") ? {display:"none"} : console.log("goat")) 
+
         // console.log(decider)
         // Fetching category's bags
         fetch(`https://bags-o7py.onrender.com/categories/${categoryID}`, {
@@ -77,6 +79,24 @@ console.log(decider)
         >
           SELL
             </button>
+
+
+           {/* Admin Change Shop for bag */}
+            <button
+            style={ deciderAdmin }  
+          className="bags-btn"
+          onClick={() => {
+            takeConfirmPage(
+            //   `/shops/${shopID}/categories/${categoryID}/bags/${categoryBag.id}/confirm`
+              `/store/category/${categoryID}/bags/${categoryBag.id}`
+            ); 
+          }}
+        >
+          ASSIGN
+            </button>
+
+
+            
              </li>
         )
     })

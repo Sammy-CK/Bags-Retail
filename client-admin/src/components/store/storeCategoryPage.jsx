@@ -71,7 +71,9 @@ function StoreCategoryPage(){
         
         <h2 className='store-h2'>STORE</h2>
 
-        <h3 className='category-h3'>CATEGORIES</h3>
+        <h3 className='category-h3'>CATEGORIES <button className='add-btn' onClick={() => takeCategory('/categories/new')}>+</button> </h3>
+        {/* <div style={{width:"100%", textAlign:"left"}}></div> */}
+
         <ul className="category-ul" >
         <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>CATEGORY</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>
             {categoryBox}

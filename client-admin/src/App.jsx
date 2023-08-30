@@ -17,6 +17,7 @@ import AddCategoryPage from './components/category/addCategoryPage';
 import SalesPage from './components/sale/salesPage';
 import NavBar from './components/navbar/navBar';
 import ShopSaleConfirm from './components/shop/shopSaleConfrim'
+import StoreEditBagPage from './components/store/storeEditBagPage';
 
 
 
@@ -40,6 +41,7 @@ function App() {
     <Route path='/categories/new' element={< AddCategoryPage />} />
     <Route path='/sales' element={< SalesPage />} />
     <Route path='/shops/:shopID/categories/:categoryID/bags/:bagID/confirm' exact element={< ShopSaleConfirm />} />
+    <Route path='/store/category/:categoryID/bags/edit/:bagID' element={< StoreEditBagPage />} />
 
 
         </Routes>
