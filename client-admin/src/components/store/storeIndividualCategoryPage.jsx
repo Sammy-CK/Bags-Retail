@@ -39,7 +39,7 @@ function StoreIndividualCategoryPage(){
 
     let shownCategoryBags = filteredBags.map(categoryBag => {
         return(
-        <li className="bags-li" key={categoryBag.id}><p className="bags-name">{categoryBag.name}</p><img src="../../images/editicon.png" width="48px" height="48px" onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/edit/${categoryBag.id}`)}/> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/> <button className="bags-btn" onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
+        <li className="bags-li" key={categoryBag.id}><p className="bags-name">{categoryBag.name}</p><p style={{textAlign:"right", paddingRight:"20px"   }} onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/edit/${categoryBag.id}`)}>EDIT</p> <img className="bags-img" src={categoryBag.image_url} width="220px" height="220px"/> <button className="bags-btn" onClick={() => takeCategoryBag(`/store/category/${categoryID}/bags/${categoryBag.id}`)}>ASSIGN</button></li>
         )
     })
 

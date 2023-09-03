@@ -12,8 +12,11 @@ function AllShopsPage(){
     let token = useSelector((state) => state.staff.staff.jwt)
     let [shops, setShops] = useState([]);
 
-    useEffect(() => {
+    let role = useSelector((state) => state.staff.staff.staff.role)
+    let [deciderAdmin, setDeciderAdmin] = useState({});
 
+    useEffect(() => {
+        setDeciderAdmin((role !== "admin") ? {display:"none"} : console.log("goat")) 
         //Fetching store bags
         fetch("https://bags-o7py.onrender.com/shops", {
             method: "GET",
@@ -44,7 +47,7 @@ function AllShopsPage(){
         <div>
             <NavBar />
             <h2>SHOPS</h2>
-            <button className='addshop-btn' onClick={() => takeShop('/shops/new')}>ADD SHOP</button>
+            <button style={ deciderAdmin } className='addshop-btn' onClick={() => takeShop('/shops/new')}>ADD SHOP</button>
 
             <ul className='allshop-ul'>
             <li className='allshop-li title-ul'><p style={{float:"left", paddingLeft:"10px"}}>SHOP</p> <p style={{float:"right", paddingRight:"10px"}}>TOTAL</p></li>

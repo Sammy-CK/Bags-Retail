@@ -88,16 +88,16 @@ function SalesPage() {
           <p>BAG</p>
           <p>PRICE</p>
           <p>SHOP</p>
-          <p>IMAGE</p>
           <p>TIME</p>
+          <p>IMAGE</p>
         </li>
         {sortedItems[sold_at].map((item) => (
           <li className="sales-li" key={item.id}>
             <p>{item.name}</p>
             <p>{item.price}</p>
             <p>{item.shop.name}</p>
-            <img className="sales-img" src={item.image_url} width="100px" height="100px"/>
             <p>{item.sold_at.split("T")[1].split('.')[0] }</p>
+            <img className="sales-img" src={item.image_url} width="100px" height="100px"/>
           </li>
         ))}
       </ul>
