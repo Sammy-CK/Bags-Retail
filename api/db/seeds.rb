@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "start"
-# Shop.create!(name:"Shop 1")
+Shop.create!(name:"Shop 1")
 # Shop.create!(name:"Shop 2")
 # Shop.create!(name:"Shop 3")
 # Shop.create!(name:"Shop 4")
