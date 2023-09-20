@@ -11,7 +11,7 @@ Shop.create!(name:"Shop 1")
 # Shop.create!(name:"Shop 3")
 # Shop.create!(name:"Shop 4")
 
-Staff.create!( name:'William Mbuva', password:'WM4321.' , phone_number:0792136895, role:'admin', shop_id: 1 )
+Staff.create!( name:'William Mbuva', password:'WM4321.' , phone_number:0700000000, role:'admin', shop_id: 1 )
 # Staff.create!( name:'test1', password:'password' , phone_number:0710000000, role:'attendant', shop_id: 2 )
 # Staff.create!( name:'test2', password:'password' , phone_number:0720000000, role:'attendant', shop_id: 3 )
 # Staff.create!( name:'test3', password:'password' , phone_number:0730000000, role:'attendant', shop_id: 4 )
